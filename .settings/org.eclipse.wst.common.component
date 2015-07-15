@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="devices-ui-prototype">
+        <wb-resource deploy-path="/" source-path="/app"/>
+        <property name="context-root" value="devices-ui-prototype"/>
+    </wb-module>
+</project-modules>
