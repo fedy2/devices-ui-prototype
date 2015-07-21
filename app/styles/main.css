@@ -1,83 +1,117 @@
-.browsehappy {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
+.no-gutter {
+    padding-right:0;
+    padding-left:0;
 }
 
+/* Move down content because we have a fixed navbar that is 50px tall */
 body {
-  padding: 0;
+  padding-top: 50px;
 }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
+.main {
+	padding-top: 15px;	
 }
 
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
-  margin-bottom: 10px;
-}
-/* Make the masthead heading the same height as the navigation */
-.header h3 {
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 40px;
-  padding-bottom: 19px;
+/** same height **/
+.main-body {
+    display: table;
 }
 
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
+
+.pager-status {
+  padding: 6px 10px;
 }
 
-.container-narrow > hr {
-  margin: 30px 0;
+.pager-status-number {
+	font-weight: bold;
 }
 
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-}
-.jumbotron .btn {
-  font-size: 21px;
-  padding: 14px 24px;
+.sidebar {
+	float: none;
+    display: table-cell;
+    vertical-align: top;
 }
 
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-}
-.marketing p + h4 {
-  margin-top: 28px;
+.add-button {
+	width: 90%;
 }
 
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
+.criteria {
+	margin-top: 8px;
+}
 
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
+.criteria-list > li {
+	padding-left: 3px;
+}
+
+.bookmarks > li {
+	padding-bottom: 3px;
+}
+
+.content {
+	float: none;
+    display: table-cell;
+    vertical-align: top;
+}
+
+.results-area {
+	margin-top: 8px;
+	height: 100%;
+	
+	border-top: 1px solid #ddd;
+	border-radius: 0;
+	box-shadow: none;
+}
+
+.results-area > .panel-body{
+	padding: 15px 0;
+
+}
+
+.messages {
+	padding-bottom: 5px;
+	border-bottom: 1px solid #ddd;
+}
+
+.applied-critera {
+	padding-bottom: 5px;
+}
+
+.listitem {
+	border-bottom: 1px solid #ddd;
+	padding: 5px;
+	cursor: pointer;
+}
+
+.listitem:hover {
+	color: #555;
+  	text-decoration: none;
+  	background-color: #f5f5f5;
+}
+
+.listitem-selected {
+	  background: #ffc;
+}
+
+.listitem-check {
+	margin: 4px 5px 0 0 !important;
+}
+
+.listitem-status {
+  	padding-right: 10px;
+}
+
+
+
+
+.device-status-online {
+	color: green;
+}
+
+.device-status-offline {
+	color: red;
+}
+
+.device-status-na {
+	color: #ccc;
 }
