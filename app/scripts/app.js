@@ -21,17 +21,30 @@ angular
   ])
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/', {
+      .when('/devices', {
         templateUrl: 'views/device_list.html',
         controller: 'DeviceListCtrl',
-        controllerAs: 'ctrl'
+        controllerAs: 'ctrl',
+        resolve: {
+        	devicesBatch : function($route, devicesservice) {
+        		var start = parseInt($route.current.params.start) || 0;
+        		var len = parseInt($route.current.params.len) || 10;
+        		return devicesservice.list(start, len, $route.current.params.query);
+        	},
+        	params: function($route) {
+        		return $route.params;
+        	}
+        }
       })
-      .when('/device/:id', {
+      .when('/devices/:id', {
         templateUrl: 'views/device_details.html',
         controller: 'DeviceDetails',
         controllerAs: 'ctrl'
       })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/devices'
       });
+  })
+  .config(function ($locationProvider) {
+	  $locationProvider.html5Mode(true);
   });

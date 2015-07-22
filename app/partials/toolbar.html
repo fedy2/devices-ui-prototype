@@ -1,0 +1,38 @@
+<!-- TOOLBAR -->
+<div class="btn-toolbar" role="toolbar" ng-controller="ToolbarCtrl as ctrl">
+  <div class="btn-group">
+    <div class="dropdown">
+      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        <span class="glyphicon glyphicon-unchecked" aria-hidden="true"></span>
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <li><a href="#">None</a></li>
+        <li><a href="#">All</a></li>
+      </ul>
+    </div>
+  </div>
+  <button class="btn btn-default">Edit</button>
+  <button class="btn btn-default">Remove</button>
+  <button class="btn btn-default">Update</button>
+  <button class="btn btn-default">
+    <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+  </button>
+  
+  
+  <div class="btn-group pull-right" role="group">
+
+        <button class="btn btn-default">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      </button>
+         <button class="btn btn-default">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      </button>
+               
+  </div>
+  
+  <!-- PAGER STATUS -->
+  <div class="pull-right pager-status">
+    <span class="pager-status-number">{{ctrl.metadata.start}} - {{ctrl.metadata.end}}</span> of <span class="pager-status-number">{{ctrl.metadata.total}}</span>
+  </div>
+</div>

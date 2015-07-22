@@ -5,6 +5,9 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
+    
+    <base href="/">
+    
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
@@ -53,24 +56,24 @@
       <!-- HEADER -->
       <div class="row">
         <div class="col-md-2">
-          
           <h4>Devices list</h4>
         </div>
         
-          <!--SEARCH BAR -->
-          <div class="col-md-10 no-gutter">
+        <!--SEARCH BAR -->
+        <div class="col-md-10 no-gutter">
           <div class="form-group col-md-8">
             <div class="input-group">
               <input type="text" class="form-control input-md" placeholder="location:pisa AND type:sensor" contenteditable="false">
               <div class="input-group-btn">
-            <button class="btn btn-default">
-            	<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-          		</button>               </div>
+                <button class="btn btn-default">
+                  <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+                </button>               
+              </div>
             </div>
-            </div>
-       
-                  <button type="submit" class="btn btn-primary">Search</button>
           </div>
+       
+          <button type="submit" class="btn btn-primary">Search</button>
+        </div>
       </div>
   
       <!-- MAIN BODY-->
@@ -166,47 +169,8 @@
         <!-- CONTENT -->
         <div class="col-md-10 content">
         	
-          <!-- TOOLBAR -->
-          <div class="btn-toolbar" role="toolbar">
-            <div class="btn-group">
-              <div class="dropdown">
-                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                  <span class="glyphicon glyphicon-unchecked" aria-hidden="true"></span>
-                  <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                  <li><a href="#">None</a></li>
-                  <li><a href="#">All</a></li>
-                </ul>
-              </div>
-            </div>
-            <button class="btn btn-default">Edit</button>
-            <button class="btn btn-default">Remove</button>
-            <button class="btn btn-default">Update</button>
-            <button class="btn btn-default">
-              <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
-            </button>
-            
-            
-            <div class="btn-group pull-right" role="group">
-         
-                  <button class="btn btn-default">
-              		<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            		</button>
-                   <button class="btn btn-default">
-              		<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            		</button>
-                         
-            </div>
-            
-            <!-- PAGER STATUS -->
-            <div class="pull-right pager-status">
-              <span class="pager-status-number">10</span> of <span class="pager-status-number">100</span>
-            </div>
-            
-      
-          </div>
-          
+          <ng-include src="'partials/toolbar.html'"></ng-include>
+
           <!-- VIEW AREA -->
           <div ng-view=""></div>
           
@@ -226,6 +190,7 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/streamjs/stream.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -233,6 +198,7 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/resources.js"></script>
         <script src="scripts/services.js"></script>
+        <script src="scripts/controllers/toolbar.js"></script>
         <script src="scripts/controllers/device_list.js"></script>
         <script src="scripts/controllers/device_details.js"></script>
         <!-- endbuild -->
