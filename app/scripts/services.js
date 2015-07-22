@@ -29,16 +29,35 @@ services.factory("devicesservice", ["devicesresource", "$q", "$log", function(de
 	
 }]);
 
-services.factory("pagingservice", ["$route", function($route) {
+services.factory("pagingservice", ["$route", "$location", "$log", function($route, $location, $log) {
 	
 	function PagingService() {
 		
 		this.metadata = {};
+		this.controls = {};
+		
 		this.update = function(deviceBatch) {
 			this.metadata.start = deviceBatch.start;
 			this.metadata.end = deviceBatch.start + deviceBatch.devices.length;
 			this.metadata.total = deviceBatch.total;
-		}
+		
+			this.controls.hasNextPage = this.metadata.end < this.metadata.total;
+			this.controls.hasPrevPage = this.metadata.start > 0;
+		};
+		
+		this.nextPage = function() {
+			var start = parseInt(this.metadata.start) + 20;
+			$location.search('start', start);
+			$location.search('len', 20);
+		};
+		
+		this.prevPage = function() {
+			$log.info("prev page");
+			var start = Math.max(parseInt(this.metadata.start) - 20, 0);
+			$location.search('start', start);
+			$location.search('len', 20);
+		};
+		
 	}
 	return new PagingService();
 	

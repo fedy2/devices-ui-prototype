@@ -22,10 +22,10 @@
   
   <div class="btn-group pull-right" role="group">
 
-        <button class="btn btn-default">
+      <button class="btn btn-default" ng-disabled="!ctrl.controls.hasPrevPage" ng-click="ctrl.movePrevPage()">
         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
       </button>
-         <button class="btn btn-default">
+      <button class="btn btn-default" ng-disabled="!ctrl.controls.hasNextPage" ng-click="ctrl.moveNextPage()">
         <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
       </button>
                

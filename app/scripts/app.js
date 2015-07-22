@@ -25,6 +25,7 @@ angular
         templateUrl: 'views/device_list.html',
         controller: 'DeviceListCtrl',
         controllerAs: 'ctrl',
+        reloadOnSearch: true,
         resolve: {
         	devicesBatch : function($route, devicesservice) {
         		var start = parseInt($route.current.params.start) || 0;
