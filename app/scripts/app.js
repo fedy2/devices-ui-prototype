@@ -21,7 +21,7 @@ angular
   ])
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/devices', {
+      .when('/projects/:projectId/devices', {
         templateUrl: 'views/device_list.html',
         controller: 'DeviceListCtrl',
         controllerAs: 'ctrl',
@@ -37,13 +37,13 @@ angular
         	}
         }
       })
-      .when('/devices/:id', {
+      .when('/projects/:projectId/devices/:deviceId', {
         templateUrl: 'views/device_details.html',
         controller: 'DeviceDetails',
         controllerAs: 'ctrl'
       })
       .otherwise({
-        redirectTo: '/devices'
+        redirectTo: '/projects/demo/devices'
       });
   })
   .config(function ($locationProvider) {
