@@ -101,7 +101,9 @@ body {
   	padding-right: 10px;
 }
 
-
+.device-properties {
+	padding-top: 10px;
+}
 
 
 .device-status-online {
@@ -114,4 +116,8 @@ body {
 
 .device-status-na {
 	color: #ccc;
+}
+
+.properties-table {
+	width: 50%;
 }
