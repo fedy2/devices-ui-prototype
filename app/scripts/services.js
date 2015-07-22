@@ -29,7 +29,8 @@ services.factory("devicesservice", ["devicesresource", "$q", "$log", function(de
 	
 }]);
 
-services.factory("pagingservice", ["$route", "$location", "$log", function($route, $location, $log) {
+services.factory("pagingservice", ["$route", "$location", "$log", "pagingConstants", 
+                                   function($route, $location, $log, pagingConstants) {
 	
 	function PagingService() {
 		
@@ -46,16 +47,16 @@ services.factory("pagingservice", ["$route", "$location", "$log", function($rout
 		};
 		
 		this.nextPage = function() {
-			var start = parseInt(this.metadata.start) + 20;
-			$location.search('start', start);
-			$location.search('len', 20);
+			var start = parseInt(this.metadata.start) + pagingConstants.pageSize;
+			$location.search(pagingConstants.startParam, start);
+			$location.search(pagingConstants.lenParam, pagingConstants.pageSize);
 		};
 		
 		this.prevPage = function() {
 			$log.info("prev page");
-			var start = Math.max(parseInt(this.metadata.start) - 20, 0);
-			$location.search('start', start);
-			$location.search('len', 20);
+			var start = Math.max(parseInt(this.metadata.start) - pagingConstants.pageSize, 0);
+			$location.search(pagingConstants.startParam, start);
+			$location.search(pagingConstants.lenParam, pagingConstants.pageSize);
 		};
 		
 	}

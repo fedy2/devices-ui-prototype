@@ -4,7 +4,6 @@ angular.module("devices", ["services"])
 .controller("DeviceListCtrl", ["$route", "$log", "pagingservice", "devicesBatch", 
            function ($route, $log, pagingservice, devicesBatch) {
 	
-	  //var self = this;
 	  this.devices = devicesBatch.devices;
 	  pagingservice.update(devicesBatch);
 	  
