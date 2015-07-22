@@ -1,0 +1,14 @@
+<div class="col-md-10 no-gutter" ng-controller="SearchbarCtrl as ctrl">
+  <div class="form-group col-md-8">
+    <div class="input-group">
+      <input type="text" class="form-control input-md" placeholder="location:pisa AND type:sensor" contenteditable="false" ng-model="ctrl.query">
+      <div class="input-group-btn">
+        <button class="btn btn-default">
+          <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+        </button>               
+      </div>
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary" ng-click="ctrl.search()">Search</button>
+</div>

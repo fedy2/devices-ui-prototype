@@ -60,20 +60,8 @@
         </div>
         
         <!--SEARCH BAR -->
-        <div class="col-md-10 no-gutter">
-          <div class="form-group col-md-8">
-            <div class="input-group">
-              <input type="text" class="form-control input-md" placeholder="location:pisa AND type:sensor" contenteditable="false">
-              <div class="input-group-btn">
-                <button class="btn btn-default">
-                  <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-                </button>               
-              </div>
-            </div>
-          </div>
-       
-          <button type="submit" class="btn btn-primary">Search</button>
-        </div>
+        <ng-include src="'partials/searchbar.html'"></ng-include>
+
       </div>
   
       <!-- MAIN BODY-->
@@ -169,6 +157,7 @@
         <!-- CONTENT -->
         <div class="col-md-10 content">
         	
+          <!-- TOOLBAR -->
           <ng-include src="'partials/toolbar.html'"></ng-include>
 
           <!-- VIEW AREA -->
@@ -199,6 +188,7 @@
         <script src="scripts/resources.js"></script>
         <script src="scripts/services.js"></script>
         <script src="scripts/constants.js"></script>
+        <script src="scripts/controllers/searchbar.js"></script>
         <script src="scripts/controllers/toolbar.js"></script>
         <script src="scripts/controllers/device_list.js"></script>
         <script src="scripts/controllers/device_details.js"></script>

@@ -65,6 +65,13 @@ services.factory("pagingservice", ["$route", "$location", "$log", "pagingConstan
 			$location.search(pagingConstants.lenParam, pagingConstants.pageSize);
 		};
 		
+		this.query = function(query) {
+			$log.info("query",query);
+			$location.search(pagingConstants.startParam, 0);
+			$location.search(pagingConstants.lenParam, pagingConstants.pageSize);
+			$location.search(pagingConstants.queryParam, query);
+		}
+		
 	}
 	return new PagingService();
 	
