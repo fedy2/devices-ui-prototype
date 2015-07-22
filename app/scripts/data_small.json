@@ -1,0 +1,1634 @@
+[
+  {
+    "id": "55a63806896f66fabc7e581d",
+    "type": "Electricity meter",
+    "name": "Electricity meter, building A, apt. 17",
+    "status": "Online",
+    "attributes": [
+      {
+        "name": "software version",
+        "value": "1.7.2"
+      },
+      {
+        "name": "location",
+        "value": "Botswana"
+      },
+      {
+        "name": "hardware type",
+        "value": "tempor"
+      },
+      {
+        "name": "group",
+        "value": "toUpdate"
+      },
+      {
+        "name": "company",
+        "value": "Enaut"
+      },
+      {
+        "name": "registered",
+        "value": "1998-08-13T07:26:09.339Z"
+      }
+    ]
+  },
+  {
+    "id": "55a6380624b904b8a06fdb37",
+    "type": "Water meter",
+    "name": "Water meter, building C, apt. 29",
+    "status": "Online",
+    "attributes": [
+      {
+        "name": "software version",
+        "value": "0.6.7"
+      },
+      {
+        "name": "location",
+        "value": "Japan"
+      },
+      {
+        "name": "hardware type",
+        "value": "nulla"
+      },
+      {
+        "name": "group",
+        "value": "updated"
+      },
+      {
+        "name": "company",
+        "value": "Voipa"
+      },
+      {
+        "name": "registered",
+        "value": "1987-12-19T09:31:54.183Z"
+      }
+    ]
+  },
+  {
+    "id": "55a63806480da638eea717eb",
+    "type": "Water meter",
+    "name": "Water meter, building B, apt. 31",
+    "status": "Offline",
+    "attributes": [
+      {
+        "name": "software version",
+        "value": "2.4.9"
+      },
+      {
+        "name": "location",
+        "value": "Gambia"
+      },
+      {
+        "name": "hardware type",
+        "value": "cupidatat"
+      },
+      {
+        "name": "group",
+        "value": "toUpdate"
+      },
+      {
+        "name": "company",
+        "value": "Namegen"
+      },
+      {
+        "name": "registered",
+        "value": "1986-12-04T07:39:46.611Z"
+      }
+    ]
+  },
+  {
+    "id": "55a63806134970c288dbfb9c",
+    "type": "Electricity meter",
+    "name": "Electricity meter, building C, apt. 18",
+    "status": "Offline",
+    "attributes": [
+      {
+        "name": "software version",
+        "value": "1.2.2"
+      },
+      {
+        "name": "location",
+        "value": "Zambia"
+      },
+      {
+        "name": "hardware type",
+        "value": "ipsum"
+      },
+      {
+        "name": "group",
+        "value": "toUpdate"
+      },
+      {
+        "name": "company",
+        "value": "Extremo"
+      },
+      {
+        "name": "registered",
+        "value": "2009-08-19T23:34:33.675Z"
+      }
+    ]
+  },
+  {
+    "id": "55a6380633720078d0de7dad",
+    "type": "Gas meter",
+    "name": "Gas meter, building B, apt. 2",
+    "status": "Online",
+    "attributes": [
+      {
+        "name": "software version",
+        "value": "2.6.9"
+      },
+      {
+        "name": "location",
+        "value": "Peru"
+      },
+      {
+        "name": "hardware type",
+        "value": "anim"
+      },
+      {
+        "name": "group",
+        "value": "updated"
+      },
+      {
+        "name": "company",
+        "value": "Bytrex"
+      },
+      {
+        "name": "registered",
+        "value": "1985-03-10T06:51:40.096Z"
+      }
+    ]
+  },
+  {
+    "id": "55a6380601633d5a57a5bcdc",
+    "type": "Water meter",
+    "name": "Water meter, building A, apt. 10",
+    "status": "Offline",
+    "attributes": [
+      {
+        "name": "software version",
+        "value": "1.9.9"
+      },
+      {
+        "name": "location",
+        "value": "Mongolia"
+      },
+      {
+        "name": "hardware type",
+        "value": "sunt"
+      },
+      {
+        "name": "group",
+        "value": "updated"
+      },
+      {
+        "name": "company",
+        "value": "Dancerity"
+      },
+      {
+        "name": "registered",
+        "value": "1972-07-01T15:58:06.470Z"
+      }
+    ]
+  },
+  {
+    "id": "55a638068936c26a986097e5",
+    "type": "Water meter",
+    "name": "Water meter, building A, apt. 2",
+    "status": "Online",
+    "attributes": [
+      {
+        "name": "software version",
+        "value": "0.2.1"
+      },
+      {
+        "name": "location",
+        "value": "Korea (North)"
+      },
+      {
+        "name": "hardware type",
+        "value": "nulla"
+      },
+      {
+        "name": "group",
+        "value": "toUpdate"
+      },
+      {
+        "name": "company",
+        "value": "Gleamink"
+      },
+      {
+        "name": "registered",
+        "value": "1981-12-15T14:16:30.371Z"
+      }
+    ]
+  },
+  {
+    "id": "55a63806b0df6d297478f3ac",
+    "type": "Gas meter",
+    "name": "Gas meter, building A, apt. 8",
+    "status": "Online",
+    "attributes": [
+      {
+        "name": "software version",
+        "value": "2.5.6"
+      },
+      {
+        "name": "location",
+        "value": "Kazakhstan"
+      },
+      {
+        "name": "hardware type",
+        "value": "labore"
+      },
+      {
+        "name": "group",
+        "value": "updated"
+      },
+      {
+        "name": "company",
+        "value": "Uni"
+      },
+      {
+        "name": "registered",
+        "value": "1991-05-01T19:09:14.960Z"
+      }
+    ]
+  },
+  {
+    "id": "55a63806f134070f5a934742",
+    "type": "Electricity meter",
+    "name": "Electricity meter, building C, apt. 21",
+    "status": "Offline",
+    "attributes": [
+      {
+        "name": "software version",
+        "value": "0.4.2"
+      },
+      {
+        "name": "location",
+        "value": "Barbados"
+      },
+      {
+        "name": "hardware type",
+        "value": "cupidatat"
+      },
+      {
+        "name": "group",
+        "value": "toUpdate"
+      },
+      {
+        "name": "company",
+        "value": "Tropoli"
+      },
+      {
+        "name": "registered",
+        "value": "2008-06-21T20:51:06.869Z"
+      }
+    ]
+  },
+  {
+    "id": "55a6380672e1a46c4dbff49e",
+    "type": "Electricity meter",
+    "name": "Electricity meter, building B, apt. 15",
+    "status": "Online",
+    "attributes": [
+      {
+        "name": "software version",
+        "value": "2.1.10"
+      },
+      {
+        "name": "location",
+        "value": "Faroe Islands"
+      },
+      {
+        "name": "hardware type",
+        "value": "culpa"
+      },
+      {
+        "name": "group",
+        "value": "toUpdate"
+      },
+      {
+        "name": "company",
+        "value": "Comcur"
+      },
+      {
+        "name": "registered",
+        "value": "2007-09-26T03:05:57.333Z"
+      }
+    ]
+  },
+  {
+    "id": "55a6380610522d090b9bbac9",
+    "type": "Electricity meter",
+    "name": "Electricity meter, building A, apt. 18",
+    "status": "Offline",
+    "attributes": [
+      {
+        "name": "software version",
+        "value": "2.3.4"
+      },
+      {
+        "name": "location",
+        "value": "Turkmenistan"
+      },
+      {
+        "name": "hardware type",
+        "value": "commodo"
+      },
+      {
+        "name": "group",
+        "value": "updated"
+      },
+      {
+        "name": "company",
+        "value": "Diginetic"
+      },
+      {
+        "name": "registered",
+        "value": "1980-07-25T15:41:35.976Z"
+      }
+    ]
+  },
+  {
+    "id": "55a63806502ad29437ce6025",
+    "type": "Electricity meter",
+    "name": "Electricity meter, building C, apt. 26",
+    "status": "Online",
+    "attributes": [
+      {
+        "name": "software version",
+        "value": "1.7.2"
+      },
+      {
+        "name": "location",
+        "value": "Montserrat"
+      },
+      {
+        "name": "hardware type",
+        "value": "duis"
+      },
+      {
+        "name": "group",
+        "value": "updated"
+      },
+      {
+        "name": "company",
+        "value": "Repetwire"
+      },
+      {
+        "name": "registered",
+        "value": "1999-10-20T00:15:46.123Z"
+      }
+    ]
+  },
+  {
+    "id": "55a63806651d373da6b0f16a",
+    "type": "Electricity meter",
+    "name": "Electricity meter, building C, apt. 16",
+    "status": "Offline",
+    "attributes": [
+      {
+        "name": "software version",
+        "value": "2.10.5"
+      },
+      {
+        "name": "location",
+        "value": "Singapore"
+      },
+      {
+        "name": "hardware type",
+        "value": "quis"
+      },
+      {
+        "name": "group",
+        "value": "toUpdate"
+      },
+      {
+        "name": "company",
+        "value": "Paprikut"
+      },
+      {
+        "name": "registered",
+        "value": "1981-03-30T07:35:20.399Z"
+      }
+    ]
+  },
+  {
+    "id": "55a63806b1f372d23aebe44e",
+    "type": "Electricity meter",
+    "name": "Electricity meter, building B, apt. 14",
+    "status": "Online",
+    "attributes": [
+      {
+        "name": "software version",
+        "value": "2.5.6"
+      },
+      {
+        "name": "location",
+        "value": "Yemen"
+      },
+      {
+        "name": "hardware type",
+        "value": "amet"
+      },
+      {
+        "name": "group",
+        "value": "toUpdate"
+      },
+      {
+        "name": "company",
+        "value": "Quilk"
+      },
+      {
+        "name": "registered",
+        "value": "1981-11-24T01:47:49.389Z"
+      }
+    ]
+  },
+  {
+    "id": "55a638064bf9d64b622971c0",
+    "type": "Electricity meter",
+    "name": "Electricity meter, building A, apt. 31",
+    "status": "Offline",
+    "attributes": [
+      {
+        "name": "software version",
+        "value": "2.0.6"
+      },
+      {
+        "name": "location",
+        "value": "Nauru"
+      },
+      {
+        "name": "hardware type",
+        "value": "consequat"
+      },
+      {
+        "name": "group",
+        "value": "updated"
+      },
+      {
+        "name": "company",
+        "value": "Remotion"
+      },
+      {
+        "name": "registered",
+        "value": "1984-01-29T22:57:24.048Z"
+      }
+    ]
+  },
+  {
+    "id": "55a63806588f8331b1a88421",
+    "type": "Gas meter",
+    "name": "Gas meter, building A, apt. 4",
+    "status": "Online",
+    "attributes": [
+      {
+        "name": "software version",
+        "value": "2.1.8"
+      },
+      {
+        "name": "location",
+        "value": "St. Helena"
+      },
+      {
+        "name": "hardware type",
+        "value": "veniam"
+      },
+      {
+        "name": "group",
+        "value": "updated"
+      },
+      {
+        "name": "company",
+        "value": "Zilidium"
+      },
+      {
+        "name": "registered",
+        "value": "1977-01-11T23:40:27.273Z"
+      }
+    ]
+  },
+  {
+    "id": "55a63806298d17c695a3afca",
+    "type": "Electricity meter",
+    "name": "Electricity meter, building C, apt. 14",
+    "status": "Online",
+    "attributes": [
+      {
+        "name": "software version",
+        "value": "0.5.10"
+      },
+      {
+        "name": "location",
+        "value": "Madagascar"
+      },
+      {
+        "name": "hardware type",
+        "value": "veniam"
+      },
+      {
+        "name": "group",
+        "value": "updated"
+      },
+      {
+        "name": "company",
+        "value": "Skybold"
+      },
+      {
+        "name": "registered",
+        "value": "1980-01-19T12:14:45.684Z"
+      }
+    ]
+  },
+  {
+    "id": "55a63806265e953a4f4a0165",
+    "type": "Electricity meter",
+    "name": "Electricity meter, building A, apt. 13",
+    "status": "Offline",
+    "attributes": [
+      {
+        "name": "software version",
+        "value": "1.1.8"
+      },
+      {
+        "name": "location",
+        "value": "New Caledonia"
+      },
+      {
+        "name": "hardware type",
+        "value": "elit"
+      },
+      {
+        "name": "group",
+        "value": "updated"
+      },
+      {
+        "name": "company",
+        "value": "Canopoly"
+      },
+      {
+        "name": "registered",
+        "value": "2005-03-11T21:24:08.886Z"
+      }
+    ]
+  },
+  {
+    "id": "55a63806c2ae42ff271ab400",
+    "type": "Water meter",
+    "name": "Water meter, building C, apt. 17",
+    "status": "Online",
+    "attributes": [
+      {
+        "name": "software version",
+        "value": "2.10.7"
+      },
+      {
+        "name": "location",
+        "value": "Iran"
+      },
+      {
+        "name": "hardware type",
+        "value": "magna"
+      },
+      {
+        "name": "group",
+        "value": "updated"
+      },
+      {
+        "name": "company",
+        "value": "Quordate"
+      },
+      {
+        "name": "registered",
+        "value": "2003-06-12T23:38:43.057Z"
+      }
+    ]
+  },
+  {
+    "id": "55a638062c9df55bd7549590",
+    "type": "Gas meter",
+    "name": "Gas meter, building B, apt. 27",
+    "status": "Offline",
+    "attributes": [
+      {
+        "name": "software version",
+        "value": "0.1.9"
+      },
+      {
+        "name": "location",
+        "value": "Equatorial Guinea"
+      },
+      {
+        "name": "hardware type",
+        "value": "reprehenderit"
+      },
+      {
+        "name": "group",
+        "value": "updated"
+      },
+      {
+        "name": "company",
+        "value": "Aeora"
+      },
+      {
+        "name": "registered",
+        "value": "1977-08-16T09:06:00.451Z"
+      }
+    ]
+  },
+  {
+    "id": "55a63806732f7e2a87013589",
+    "type": "Gas meter",
+    "name": "Gas meter, building C, apt. 1",
+    "status": "Offline",
+    "attributes": [
+      {
+        "name": "software version",
+        "value": "1.4.4"
+      },
+      {
+        "name": "location",
+        "value": "Sri Lanka"
+      },
+      {
+        "name": "hardware type",
+        "value": "ullamco"
+      },
+      {
+        "name": "group",
+        "value": "updated"
+      },
+      {
+        "name": "company",
+        "value": "Kenegy"
+      },
+      {
+        "name": "registered",
+        "value": "2000-04-14T23:50:00.126Z"
+      }
+    ]
+  },
+  {
+    "id": "55a6380638782ece41757855",
+    "type": "Electricity meter",
+    "name": "Electricity meter, building C, apt. 10",
+    "status": "Offline",
+    "attributes": [
+      {
+        "name": "software version",
+        "value": "2.1.2"
+      },
+      {
+        "name": "location",
+        "value": "Gabon"
+      },
+      {
+        "name": "hardware type",
+        "value": "enim"
+      },
+      {
+        "name": "group",
+        "value": "toUpdate"
+      },
+      {
+        "name": "company",
+        "value": "Zenthall"
+      },
+      {
+        "name": "registered",
+        "value": "1977-09-15T14:17:27.757Z"
+      }
+    ]
+  },
+  {
+    "id": "55a6380667dd82d50cd6fe67",
+    "type": "Gas meter",
+    "name": "Gas meter, building C, apt. 13",
+    "status": "Online",
+    "attributes": [
+      {
+        "name": "software version",
+        "value": "2.0.7"
+      },
+      {
+        "name": "location",
+        "value": "Israel"
+      },
+      {
+        "name": "hardware type",
+        "value": "dolor"
+      },
+      {
+        "name": "group",
+        "value": "toUpdate"
+      },
+      {
+        "name": "company",
+        "value": "Tetratrex"
+      },
+      {
+        "name": "registered",
+        "value": "1995-03-01T11:39:15.296Z"
+      }
+    ]
+  },
+  {
+    "id": "55a6380672854dbb331b3ec2",
+    "type": "Gas meter",
+    "name": "Gas meter, building A, apt. 32",
+    "status": "Online",
+    "attributes": [
+      {
+        "name": "software version",
+        "value": "0.5.3"
+      },
+      {
+        "name": "location",
+        "value": "Christmas Island"
+      },
+      {
+        "name": "hardware type",
+        "value": "ex"
+      },
+      {
+        "name": "group",
+        "value": "toUpdate"
+      },
+      {
+        "name": "company",
+        "value": "Quintity"
+      },
+      {
+        "name": "registered",
+        "value": "1974-06-27T18:51:59.696Z"
+      }
+    ]
+  },
+  {
+    "id": "55a63806693185f2df137068",
+    "type": "Water meter",
+    "name": "Water meter, building A, apt. 27",
+    "status": "Online",
+    "attributes": [
+      {
+        "name": "software version",
+        "value": "1.9.4"
+      },
+      {
+        "name": "location",
+        "value": "Romania"
+      },
+      {
+        "name": "hardware type",
+        "value": "officia"
+      },
+      {
+        "name": "group",
+        "value": "updated"
+      },
+      {
+        "name": "company",
+        "value": "Tingles"
+      },
+      {
+        "name": "registered",
+        "value": "1999-09-11T11:12:32.445Z"
+      }
+    ]
+  },
+  {
+    "id": "55a63806951ab6460d8b6ee3",
+    "type": "Gas meter",
+    "name": "Gas meter, building A, apt. 22",
+    "status": "Online",
+    "attributes": [
+      {
+        "name": "software version",
+        "value": "2.3.10"
+      },
+      {
+        "name": "location",
+        "value": "British Indian Ocean Territory"
+      },
+      {
+        "name": "hardware type",
+        "value": "laboris"
+      },
+      {
+        "name": "group",
+        "value": "updated"
+      },
+      {
+        "name": "company",
+        "value": "Zaggle"
+      },
+      {
+        "name": "registered",
+        "value": "1985-05-26T05:46:23.333Z"
+      }
+    ]
+  },
+  {
+    "id": "55a63806688c9020b02c2a3c",
+    "type": "Electricity meter",
+    "name": "Electricity meter, building A, apt. 18",
+    "status": "Offline",
+    "attributes": [
+      {
+        "name": "software version",
+        "value": "1.5.7"
+      },
+      {
+        "name": "location",
+        "value": "Portugal"
+      },
+      {
+        "name": "hardware type",
+        "value": "elit"
+      },
+      {
+        "name": "group",
+        "value": "toUpdate"
+      },
+      {
+        "name": "company",
+        "value": "Neptide"
+      },
+      {
+        "name": "registered",
+        "value": "1983-08-09T03:18:16.232Z"
+      }
+    ]
+  },
+  {
+    "id": "55a63806f393d3fafb267793",
+    "type": "Gas meter",
+    "name": "Gas meter, building B, apt. 31",
+    "status": "Offline",
+    "attributes": [
+      {
+        "name": "software version",
+        "value": "1.1.7"
+      },
+      {
+        "name": "location",
+        "value": "Marshall Islands"
+      },
+      {
+        "name": "hardware type",
+        "value": "aute"
+      },
+      {
+        "name": "group",
+        "value": "updated"
+      },
+      {
+        "name": "company",
+        "value": "Martgo"
+      },
+      {
+        "name": "registered",
+        "value": "1979-01-14T01:31:24.558Z"
+      }
+    ]
+  },
+  {
+    "id": "55a638069105572237f9a67e",
+    "type": "Water meter",
+    "name": "Water meter, building A, apt. 25",
+    "status": "Online",
+    "attributes": [
+      {
+        "name": "software version",
+        "value": "0.6.10"
+      },
+      {
+        "name": "location",
+        "value": "Burkina Faso"
+      },
+      {
+        "name": "hardware type",
+        "value": "tempor"
+      },
+      {
+        "name": "group",
+        "value": "toUpdate"
+      },
+      {
+        "name": "company",
+        "value": "Mondicil"
+      },
+      {
+        "name": "registered",
+        "value": "1985-12-19T23:51:44.813Z"
+      }
+    ]
+  },
+  {
+    "id": "55a638068c1f851b98e3b2e5",
+    "type": "Water meter",
+    "name": "Water meter, building A, apt. 18",
+    "status": "Online",
+    "attributes": [
+      {
+        "name": "software version",
+        "value": "0.0.5"
+      },
+      {
+        "name": "location",
+        "value": "France, Metropolitan"
+      },
+      {
+        "name": "hardware type",
+        "value": "fugiat"
+      },
+      {
+        "name": "group",
+        "value": "updated"
+      },
+      {
+        "name": "company",
+        "value": "Quonata"
+      },
+      {
+        "name": "registered",
+        "value": "1990-12-25T15:17:26.729Z"
+      }
+    ]
+  },
+  {
+    "id": "55a6380620a87bfe04b4ea1d",
+    "type": "Water meter",
+    "name": "Water meter, building A, apt. 22",
+    "status": "Offline",
+    "attributes": [
+      {
+        "name": "software version",
+        "value": "1.1.6"
+      },
+      {
+        "name": "location",
+        "value": "Netherlands"
+      },
+      {
+        "name": "hardware type",
+        "value": "cillum"
+      },
+      {
+        "name": "group",
+        "value": "toUpdate"
+      },
+      {
+        "name": "company",
+        "value": "Zilladyne"
+      },
+      {
+        "name": "registered",
+        "value": "1995-07-20T13:13:19.576Z"
+      }
+    ]
+  },
+  {
+    "id": "55a6380617e0d5911524014c",
+    "type": "Electricity meter",
+    "name": "Electricity meter, building A, apt. 3",
+    "status": "Online",
+    "attributes": [
+      {
+        "name": "software version",
+        "value": "2.0.8"
+      },
+      {
+        "name": "location",
+        "value": "Angola"
+      },
+      {
+        "name": "hardware type",
+        "value": "aliquip"
+      },
+      {
+        "name": "group",
+        "value": "updated"
+      },
+      {
+        "name": "company",
+        "value": "Rodemco"
+      },
+      {
+        "name": "registered",
+        "value": "2004-12-18T06:28:54.582Z"
+      }
+    ]
+  },
+  {
+    "id": "55a6380646577b8ef839aabf",
+    "type": "Gas meter",
+    "name": "Gas meter, building C, apt. 10",
+    "status": "Online",
+    "attributes": [
+      {
+        "name": "software version",
+        "value": "0.2.1"
+      },
+      {
+        "name": "location",
+        "value": "Antigua and Barbuda"
+      },
+      {
+        "name": "hardware type",
+        "value": "magna"
+      },
+      {
+        "name": "group",
+        "value": "toUpdate"
+      },
+      {
+        "name": "company",
+        "value": "Flexigen"
+      },
+      {
+        "name": "registered",
+        "value": "1982-05-25T20:19:55.860Z"
+      }
+    ]
+  },
+  {
+    "id": "55a63806b7ef4f304f3e9530",
+    "type": "Gas meter",
+    "name": "Gas meter, building B, apt. 23",
+    "status": "Online",
+    "attributes": [
+      {
+        "name": "software version",
+        "value": "2.1.0"
+      },
+      {
+        "name": "location",
+        "value": "Dominica"
+      },
+      {
+        "name": "hardware type",
+        "value": "aliqua"
+      },
+      {
+        "name": "group",
+        "value": "updated"
+      },
+      {
+        "name": "company",
+        "value": "Isologics"
+      },
+      {
+        "name": "registered",
+        "value": "1973-11-19T22:58:59.379Z"
+      }
+    ]
+  },
+  {
+    "id": "55a63806647b8b7cd53e8ee3",
+    "type": "Electricity meter",
+    "name": "Electricity meter, building C, apt. 17",
+    "status": "Offline",
+    "attributes": [
+      {
+        "name": "software version",
+        "value": "2.1.6"
+      },
+      {
+        "name": "location",
+        "value": "Zaire"
+      },
+      {
+        "name": "hardware type",
+        "value": "irure"
+      },
+      {
+        "name": "group",
+        "value": "toUpdate"
+      },
+      {
+        "name": "company",
+        "value": "Imaginart"
+      },
+      {
+        "name": "registered",
+        "value": "1973-12-11T17:06:39.110Z"
+      }
+    ]
+  },
+  {
+    "id": "55a63806d658d6b0e553c9da",
+    "type": "Water meter",
+    "name": "Water meter, building A, apt. 7",
+    "status": "Offline",
+    "attributes": [
+      {
+        "name": "software version",
+        "value": "2.3.9"
+      },
+      {
+        "name": "location",
+        "value": "Brazil"
+      },
+      {
+        "name": "hardware type",
+        "value": "aute"
+      },
+      {
+        "name": "group",
+        "value": "updated"
+      },
+      {
+        "name": "company",
+        "value": "Ultrasure"
+      },
+      {
+        "name": "registered",
+        "value": "2010-09-22T18:48:59.447Z"
+      }
+    ]
+  },
+  {
+    "id": "55a638069588127cb888e1b2",
+    "type": "Gas meter",
+    "name": "Gas meter, building A, apt. 14",
+    "status": "Offline",
+    "attributes": [
+      {
+        "name": "software version",
+        "value": "2.8.4"
+      },
+      {
+        "name": "location",
+        "value": "Jamaica"
+      },
+      {
+        "name": "hardware type",
+        "value": "eu"
+      },
+      {
+        "name": "group",
+        "value": "updated"
+      },
+      {
+        "name": "company",
+        "value": "Gynko"
+      },
+      {
+        "name": "registered",
+        "value": "1988-09-20T10:06:40.782Z"
+      }
+    ]
+  },
+  {
+    "id": "55a638066a3429cd0e30a3ee",
+    "type": "Water meter",
+    "name": "Water meter, building A, apt. 4",
+    "status": "Online",
+    "attributes": [
+      {
+        "name": "software version",
+        "value": "0.0.7"
+      },
+      {
+        "name": "location",
+        "value": "Uganda"
+      },
+      {
+        "name": "hardware type",
+        "value": "mollit"
+      },
+      {
+        "name": "group",
+        "value": "updated"
+      },
+      {
+        "name": "company",
+        "value": "Zyple"
+      },
+      {
+        "name": "registered",
+        "value": "1981-11-23T16:13:30.855Z"
+      }
+    ]
+  },
+  {
+    "id": "55a638064c1aac62007b681e",
+    "type": "Gas meter",
+    "name": "Gas meter, building C, apt. 27",
+    "status": "Online",
+    "attributes": [
+      {
+        "name": "software version",
+        "value": "0.6.9"
+      },
+      {
+        "name": "location",
+        "value": "Morocco"
+      },
+      {
+        "name": "hardware type",
+        "value": "eu"
+      },
+      {
+        "name": "group",
+        "value": "toUpdate"
+      },
+      {
+        "name": "company",
+        "value": "Zensus"
+      },
+      {
+        "name": "registered",
+        "value": "1997-12-23T13:38:07.441Z"
+      }
+    ]
+  },
+  {
+    "id": "55a63806d4377aa808cf319f",
+    "type": "Gas meter",
+    "name": "Gas meter, building B, apt. 11",
+    "status": "Offline",
+    "attributes": [
+      {
+        "name": "software version",
+        "value": "0.0.8"
+      },
+      {
+        "name": "location",
+        "value": "Greece"
+      },
+      {
+        "name": "hardware type",
+        "value": "eu"
+      },
+      {
+        "name": "group",
+        "value": "toUpdate"
+      },
+      {
+        "name": "company",
+        "value": "Virva"
+      },
+      {
+        "name": "registered",
+        "value": "1996-01-31T08:09:53.127Z"
+      }
+    ]
+  },
+  {
+    "id": "55a63806635132f5d12524e8",
+    "type": "Water meter",
+    "name": "Water meter, building C, apt. 17",
+    "status": "Offline",
+    "attributes": [
+      {
+        "name": "software version",
+        "value": "2.6.5"
+      },
+      {
+        "name": "location",
+        "value": "Bangladesh"
+      },
+      {
+        "name": "hardware type",
+        "value": "aute"
+      },
+      {
+        "name": "group",
+        "value": "updated"
+      },
+      {
+        "name": "company",
+        "value": "Portaline"
+      },
+      {
+        "name": "registered",
+        "value": "1975-01-28T12:35:37.639Z"
+      }
+    ]
+  },
+  {
+    "id": "55a638067560c6bdbc8c43ba",
+    "type": "Electricity meter",
+    "name": "Electricity meter, building B, apt. 10",
+    "status": "Offline",
+    "attributes": [
+      {
+        "name": "software version",
+        "value": "2.1.2"
+      },
+      {
+        "name": "location",
+        "value": "Haiti"
+      },
+      {
+        "name": "hardware type",
+        "value": "et"
+      },
+      {
+        "name": "group",
+        "value": "updated"
+      },
+      {
+        "name": "company",
+        "value": "Tubalum"
+      },
+      {
+        "name": "registered",
+        "value": "1980-06-20T14:34:31.749Z"
+      }
+    ]
+  },
+  {
+    "id": "55a638067dc425a580eec1b1",
+    "type": "Gas meter",
+    "name": "Gas meter, building A, apt. 21",
+    "status": "Offline",
+    "attributes": [
+      {
+        "name": "software version",
+        "value": "2.1.3"
+      },
+      {
+        "name": "location",
+        "value": "Lesotho"
+      },
+      {
+        "name": "hardware type",
+        "value": "mollit"
+      },
+      {
+        "name": "group",
+        "value": "updated"
+      },
+      {
+        "name": "company",
+        "value": "Cowtown"
+      },
+      {
+        "name": "registered",
+        "value": "1972-07-23T19:31:57.940Z"
+      }
+    ]
+  },
+  {
+    "id": "55a63806886bbdb8100e062a",
+    "type": "Electricity meter",
+    "name": "Electricity meter, building C, apt. 29",
+    "status": "Offline",
+    "attributes": [
+      {
+        "name": "software version",
+        "value": "2.2.8"
+      },
+      {
+        "name": "location",
+        "value": "Palau"
+      },
+      {
+        "name": "hardware type",
+        "value": "eu"
+      },
+      {
+        "name": "group",
+        "value": "toUpdate"
+      },
+      {
+        "name": "company",
+        "value": "Mediot"
+      },
+      {
+        "name": "registered",
+        "value": "1992-04-29T10:38:24.791Z"
+      }
+    ]
+  },
+  {
+    "id": "55a638060c855fc2d20f888f",
+    "type": "Electricity meter",
+    "name": "Electricity meter, building A, apt. 10",
+    "status": "Offline",
+    "attributes": [
+      {
+        "name": "software version",
+        "value": "1.7.5"
+      },
+      {
+        "name": "location",
+        "value": "Australia"
+      },
+      {
+        "name": "hardware type",
+        "value": "ullamco"
+      },
+      {
+        "name": "group",
+        "value": "toUpdate"
+      },
+      {
+        "name": "company",
+        "value": "Ziggles"
+      },
+      {
+        "name": "registered",
+        "value": "1976-01-28T08:41:27.351Z"
+      }
+    ]
+  },
+  {
+    "id": "55a63806d2fc3bd653afff16",
+    "type": "Water meter",
+    "name": "Water meter, building C, apt. 15",
+    "status": "Online",
+    "attributes": [
+      {
+        "name": "software version",
+        "value": "1.1.6"
+      },
+      {
+        "name": "location",
+        "value": "Tajikistan"
+      },
+      {
+        "name": "hardware type",
+        "value": "culpa"
+      },
+      {
+        "name": "group",
+        "value": "toUpdate"
+      },
+      {
+        "name": "company",
+        "value": "Orboid"
+      },
+      {
+        "name": "registered",
+        "value": "2014-08-16T13:26:05.590Z"
+      }
+    ]
+  },
+  {
+    "id": "55a638062244dc47dd47bc9f",
+    "type": "Water meter",
+    "name": "Water meter, building C, apt. 29",
+    "status": "Online",
+    "attributes": [
+      {
+        "name": "software version",
+        "value": "0.0.9"
+      },
+      {
+        "name": "location",
+        "value": "Saint Lucia"
+      },
+      {
+        "name": "hardware type",
+        "value": "ut"
+      },
+      {
+        "name": "group",
+        "value": "updated"
+      },
+      {
+        "name": "company",
+        "value": "Digial"
+      },
+      {
+        "name": "registered",
+        "value": "2013-04-08T10:35:17.790Z"
+      }
+    ]
+  },
+  {
+    "id": "55a638067c64baeefdf513a0",
+    "type": "Gas meter",
+    "name": "Gas meter, building A, apt. 28",
+    "status": "Offline",
+    "attributes": [
+      {
+        "name": "software version",
+        "value": "2.7.9"
+      },
+      {
+        "name": "location",
+        "value": "Somalia"
+      },
+      {
+        "name": "hardware type",
+        "value": "sunt"
+      },
+      {
+        "name": "group",
+        "value": "updated"
+      },
+      {
+        "name": "company",
+        "value": "Jetsilk"
+      },
+      {
+        "name": "registered",
+        "value": "1987-10-03T19:05:44.599Z"
+      }
+    ]
+  },
+  {
+    "id": "55a6380649b5d16b411d359d",
+    "type": "Gas meter",
+    "name": "Gas meter, building B, apt. 16",
+    "status": "Online",
+    "attributes": [
+      {
+        "name": "software version",
+        "value": "2.0.0"
+      },
+      {
+        "name": "location",
+        "value": "Djibouti"
+      },
+      {
+        "name": "hardware type",
+        "value": "culpa"
+      },
+      {
+        "name": "group",
+        "value": "toUpdate"
+      },
+      {
+        "name": "company",
+        "value": "Architax"
+      },
+      {
+        "name": "registered",
+        "value": "1984-11-12T09:48:48.272Z"
+      }
+    ]
+  },
+  {
+    "id": "55a63806d8ea9c74287509c6",
+    "type": "Gas meter",
+    "name": "Gas meter, building B, apt. 2",
+    "status": "Online",
+    "attributes": [
+      {
+        "name": "software version",
+        "value": "2.8.5"
+      },
+      {
+        "name": "location",
+        "value": "Saint Vincent and The Grenadines"
+      },
+      {
+        "name": "hardware type",
+        "value": "reprehenderit"
+      },
+      {
+        "name": "group",
+        "value": "updated"
+      },
+      {
+        "name": "company",
+        "value": "Savvy"
+      },
+      {
+        "name": "registered",
+        "value": "2011-01-11T13:09:47.779Z"
+      }
+    ]
+  },
+  {
+    "id": "55a63806cd04ea9e98894d7d",
+    "type": "Electricity meter",
+    "name": "Electricity meter, building A, apt. 30",
+    "status": "Offline",
+    "attributes": [
+      {
+        "name": "software version",
+        "value": "0.2.6"
+      },
+      {
+        "name": "location",
+        "value": "Denmark"
+      },
+      {
+        "name": "hardware type",
+        "value": "et"
+      },
+      {
+        "name": "group",
+        "value": "updated"
+      },
+      {
+        "name": "company",
+        "value": "Apexia"
+      },
+      {
+        "name": "registered",
+        "value": "2001-05-29T19:25:57.042Z"
+      }
+    ]
+  }
+]

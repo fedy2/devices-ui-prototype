@@ -10,6 +10,7 @@
  */
 angular
   .module('devicesUiApp', [
+    'devices',                           
     'ngAnimate',
     'ngCookies',
     'ngMessages',
@@ -21,14 +22,14 @@ angular
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
+        templateUrl: 'views/device_list.html',
+        controller: 'DeviceListCtrl',
+        controllerAs: 'ctrl'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
+      .when('/device/:id', {
+        templateUrl: 'views/device_details.html',
+        controller: 'DeviceDetails',
+        controllerAs: 'ctrl'
       })
       .otherwise({
         redirectTo: '/'

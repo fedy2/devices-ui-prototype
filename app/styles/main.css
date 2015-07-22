@@ -100,24 +100,3 @@ body {
 .listitem-status {
   	padding-right: 10px;
 }
-
-.device-properties {
-	padding-top: 10px;
-}
-
-
-.device-status-online {
-	color: green;
-}
-
-.device-status-offline {
-	color: red;
-}
-
-.device-status-na {
-	color: #ccc;
-}
-
-.properties-table {
-	width: 50%;
-}
