@@ -30,7 +30,8 @@ angular
         	devicesBatch : function($route, devicesservice, pagingConstants) {
         		var start = parseInt($route.current.params[pagingConstants.startParam]) || 0;
         		var len = parseInt($route.current.params[pagingConstants.lenParam]) || pagingConstants.pageSize;
-        		return devicesservice.list(start, len, $route.current.params.query);
+        		var query = $route.current.params[pagingConstants.queryParam] || null;
+        		return devicesservice.list(start, len, query);
         	}
         }
       })

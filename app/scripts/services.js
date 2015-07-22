@@ -2,7 +2,7 @@
 
 var services = angular.module("services", ["resources"]);
 
-services.factory("devicesservice", ["devicesresource", "$q", "$log", function(devicesresource, $q, $log) {
+services.factory("devicesservice", ["devicesresource", "$q", "$log", "parsingservice", function(devicesresource, $q, $log, parsingservice) {
 	
 	function DeviceService() {
 		
@@ -11,9 +11,15 @@ services.factory("devicesservice", ["devicesresource", "$q", "$log", function(de
 			var deferred = $q.defer();
 			
 			devicesresource.query().$promise.then(function(devices) {
-				var filteredDevices = new Stream(devices)
-				   .slice(start, start + len)
-				   .toArray();
+				
+				var stream = new Stream(devices);
+				   
+				if (query != null) {
+					var filterFunction = parsingservice.parse(query);
+					stream.filter(filterFunction);
+				}
+								
+				var filteredDevices = stream.slice(start, start + len).toArray();
 				
 				deferred.resolve({
 					devices:filteredDevices,
@@ -61,6 +67,23 @@ services.factory("pagingservice", ["$route", "$location", "$log", "pagingConstan
 		
 	}
 	return new PagingService();
+	
+}]);
+
+
+services.factory("parsingservice", ["$log", 
+                                   function($log) {
+	
+	function ParsingService() {
+		this.parse = function(query) {
+			$log.info("query", query);
+			var functionCode = LangParser.parser.parse(query);
+			$log.info("functionCode", functionCode);
+			return Function("obj",functionCode);
+		};
+	}
+	return new ParsingService();
+	
 	
 }]);
 
