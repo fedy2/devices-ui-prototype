@@ -1,11 +1,11 @@
 'use strict';
 
 angular.module("devices", ["services"])
-.controller("DeviceListCtrl", ["$route", "$log", "pagingservice", "devicesBatch", 
-           function ($route, $log, pagingservice, devicesBatch) {
+.controller("DeviceListCtrl", ["$route", "$log", "searchservice", "devicesBatch", 
+           function ($route, $log, searchservice, devicesBatch) {
 	
 	  this.devices = devicesBatch.devices;
-	  pagingservice.update(devicesBatch);
+	  searchservice.update(devicesBatch);
 	  
 	  this.selected = [];
 	  this.isSelected = function(device) {

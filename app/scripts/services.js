@@ -46,10 +46,10 @@ services.factory("devicesservice", ["devicesresource", "$q", "$log", "parsingser
 	
 }]);
 
-services.factory("pagingservice", ["$route", "$location", "$log", "pagingConstants", 
+services.factory("searchservice", ["$route", "$location", "$log", "pagingConstants", 
                                    function($route, $location, $log, pagingConstants) {
 	
-	function PagingService() {
+	function SearchService() {
 		
 		var self = this;
 		
@@ -159,7 +159,7 @@ services.factory("pagingservice", ["$route", "$location", "$log", "pagingConstan
 		
 		
 	}
-	return new PagingService();
+	return new SearchService();
 	
 }]);
 
@@ -210,8 +210,8 @@ services.factory("bookmarkservice", ["$log",
  	
  }]);
 
-services.factory("filtersgenerator", ["$q", "$log", "devicesresource", "pagingservice", 
-                                     function($q, $log, devicesresource, pagingservice) {
+services.factory("filtersgenerator", ["$q", "$log", "devicesresource", "searchservice", 
+                                     function($q, $log, devicesresource, searchservice) {
   	
   	function FiltersGenerator() {
   		

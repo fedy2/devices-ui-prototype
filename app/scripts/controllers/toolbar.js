@@ -1,13 +1,13 @@
 'use strict';
 
 angular.module("devicesUiApp")
-.controller("ToolbarCtrl", ["$log", "pagingservice", 
-           function ($log, pagingservice) {
+.controller("ToolbarCtrl", ["$log", "searchservice", 
+           function ($log, searchservice) {
 	
-	this.metadata = pagingservice.metadata;
-	this.controls = pagingservice.controls;
+	this.metadata = searchservice.metadata;
+	this.controls = searchservice.controls;
 	
-	this.moveNextPage = pagingservice.nextPage;
-	this.movePrevPage = pagingservice.prevPage;
+	this.moveNextPage = searchservice.nextPage;
+	this.movePrevPage = searchservice.prevPage;
 
 }]);

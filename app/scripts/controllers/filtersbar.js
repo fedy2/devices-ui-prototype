@@ -1,10 +1,10 @@
 'use strict';
 
 angular.module("devicesUiApp")
-.controller("FiltersbarCtrl", ["$log", "pagingservice",  
-           function ($log, pagingservice) {
+.controller("FiltersbarCtrl", ["$log", "searchservice",  
+           function ($log, searchservice) {
 	
-	this.metadata = pagingservice.metadata;
-	this.removeFilter = pagingservice.removeFilter;
+	this.metadata = searchservice.metadata;
+	this.removeFilter = searchservice.removeFilter;
 
 }]);

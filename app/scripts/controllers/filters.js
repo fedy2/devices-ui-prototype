@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module("devicesUiApp")
-.controller("FiltersCtrl", ["$log", "filtersgenerator", "pagingservice", 
-           function ($log, filtersgenerator, pagingservice) {
+.controller("FiltersCtrl", ["$log", "filtersgenerator", "searchservice", 
+           function ($log, filtersgenerator, searchservice) {
 	
 	var self = this;
 	
@@ -12,7 +12,7 @@ angular.module("devicesUiApp")
 		self.groupedFilters = Stream(filters).groupingBy('property');
 	});
 	
-	this.isActive = pagingservice.isFilterActive;
-	this.toggle = pagingservice.toggleFilter;
+	this.isActive = searchservice.isFilterActive;
+	this.toggle = searchservice.toggleFilter;
 
 }]);

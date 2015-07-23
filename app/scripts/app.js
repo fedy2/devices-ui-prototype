@@ -27,11 +27,11 @@ angular
         controllerAs: 'ctrl',
         reloadOnSearch: true,
         resolve: {
-        	devicesBatch : function($route, devicesservice, pagingservice, pagingConstants) {
+        	devicesBatch : function($route, devicesservice, searchservice, pagingConstants) {
         		var start = parseInt($route.current.params[pagingConstants.startParam]) || 0;
         		var len = parseInt($route.current.params[pagingConstants.lenParam]) || pagingConstants.pageSize;
         		var query = $route.current.params[pagingConstants.queryParam] || null;
-        		var filters = pagingservice.decodeFilters($route.current.params[pagingConstants.filtersParam] || []);
+        		var filters = searchservice.decodeFilters($route.current.params[pagingConstants.filtersParam] || []);
         		return devicesservice.list(start, len, query, filters);
         	}
         }

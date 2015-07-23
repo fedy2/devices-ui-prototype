@@ -1,14 +1,14 @@
 'use strict';
 
 angular.module("devicesUiApp")
-.controller("BookmarksCtrl", ["$log", "bookmarkservice", "pagingservice",
-           function ($log, bookmarkservice, pagingservice) {
+.controller("BookmarksCtrl", ["$log", "bookmarkservice", "searchservice",
+           function ($log, bookmarkservice, searchservice) {
 	
 	this.bookmarks = bookmarkservice.bookmarks;
 	
 	this.open = function(bookmark) {
 		$log.info('open bookmark', bookmark);
-		pagingservice.query(bookmark.query);
+		searchservice.query(bookmark.query);
 	};
 
 }]);
