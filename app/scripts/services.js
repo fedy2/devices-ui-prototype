@@ -64,6 +64,8 @@ services.factory("searchservice", ["$route", "$location", "$log", "pagingConstan
 			this.metadata.total = deviceBatch.total;
 			this.metadata.query = deviceBatch.query;
 			this.metadata.filters = deviceBatch.filters;
+			
+			this.metadata.userQuery = deviceBatch.query;
 		
 			this.controls.hasNextPage = this.metadata.end < this.metadata.total;
 			this.controls.hasPrevPage = this.metadata.start > 0;
@@ -121,13 +123,21 @@ services.factory("searchservice", ["$route", "$location", "$log", "pagingConstan
   		
   		
   		//SEARCH
-		
-		this.query = function(query, filters) {
+  		
+		this.search = function(query, filters) {
 			$log.info("search", query, filters);
 			$location.search(pagingConstants.startParam, 0);
 			$location.search(pagingConstants.lenParam, pagingConstants.pageSize);
 			$location.search(pagingConstants.queryParam, query);
 			$location.search(pagingConstants.filtersParam, self.encodeFilters(filters));
+		};
+		
+		this.query = function(query) {
+			$log.info("query", query);
+			$location.search(pagingConstants.startParam, 0);
+			$location.search(pagingConstants.lenParam, pagingConstants.pageSize);
+			$location.search(pagingConstants.queryParam, query);
+			$location.search(pagingConstants.filtersParam, self.encodeFilters(self.metadata.filters));
 		};
 		
 		this.applyFilters = function() {

@@ -8,7 +8,7 @@ angular.module("devicesUiApp")
 	
 	this.open = function(bookmark) {
 		$log.info('open bookmark', bookmark);
-		searchservice.query(bookmark.query);
+		searchservice.search(bookmark.query, []);
 	};
 
 }]);

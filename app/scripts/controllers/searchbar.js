@@ -7,8 +7,8 @@ angular.module("devicesUiApp")
 	this.metadata = searchservice.metadata;
 	
 	this.search = function() {
-		$log.info('search', this.query);
-		searchservice.query(this.query);
+		$log.info('search button pressed', searchservice.metadata.userQuery);
+		searchservice.query(searchservice.metadata.userQuery);
 	};
 
 }]);
