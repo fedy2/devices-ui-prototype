@@ -9,7 +9,7 @@
     <div class="messages text-center" ng-if="ctrl.devices.length==0">
       No devices matched your search.
     </div>
-    <div class="messages text-center" ng-if="ctrl.selection.isPartial()">
+    <div class="messages text-center" ng-if="ctrl.selection.isPageSelected()">
       All {{ctrl.devices.length}} devices on this page have been selected. <a href="#" ng-click="ctrl.selection.selectAll()">Select all devices that match this search</a>
     </div>
     

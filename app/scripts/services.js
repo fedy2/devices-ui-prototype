@@ -335,51 +335,59 @@ services.factory("selectionservice", ["$log",
   	function SelectionService() {
   		var self = this;
   		
-  		this.status = {};
-  		this.status.selected = [];
-  		this.status.allSelected = false;
-  		this.status.pageSelected = false;
+  		this.selected = [];
+  		this.allSelected = false;
+  		this.pageSelected = false;
   		
 		this.isSelected = function(device) {
-			return self.status.allSelected || self.status.selected.indexOf(device.id)>=0;
+			return self.allSelected || self.selected.indexOf(device.id)>=0;
 		};
 		
 		this.toggle = function(device) {
 			$log.info("Toggle ", device);
-			var idx = self.status.selected.indexOf(device.id);
-			if (idx >= 0) self.status.selected.splice(idx, 1);
-			else self.status.selected.push(device.id);
+			var idx = self.selected.indexOf(device.id);
+			if (idx >= 0) self.selected.splice(idx, 1);
+			else self.selected.push(device.id);
 		};
 		
 		this.clear = function() {
-			self.status.selected = [];
-			self.status.allSelected = false;
-			self.status.pageSelected = false;
+			self.selected = [];
+			self.allSelected = false;
+			self.pageSelected = false;
 		};
 		
 		this.selectPage = function(devices) {
 			$log.info("select ", devices);
 			for (var i = 0; i<devices.length; i++) {
 				var device = devices[i];
-				if (self.status.selected.indexOf(device.id)<0) self.status.selected.push(device.id);
+				if (self.selected.indexOf(device.id)<0) self.selected.push(device.id);
 			}
+			self.pageSelected = true;
 		};
 		
 		this.selectAll = function() {
 			$log.info("selectAll ");
-			self.status.allSelected = true;
+			self.allSelected = true;
+			self.pageSelected = false;
 		};
 		
 		this.isNone = function() {
-			return self.status.selected.length == 0 && !self.status.allSelected;
+			return self.selected.length == 0 && !self.allSelected;
 		};
 		
 		this.isPartial = function() {
-			return self.status.selected.length != 0 && !self.status.allSelected;
+			return self.selected.length != 0 && !self.allSelected;
 		};
 		
+		this.isPageSelected = function () {
+			return self.pageSelected;
+		}
+		this.resetPageSelected = function () {
+			self.pageSelected = false;
+		}
+		
 		this.isAll = function() {
-			return self.status.allSelected;
+			return self.allSelected;
 		};
 		
 		

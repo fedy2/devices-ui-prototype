@@ -8,4 +8,5 @@ angular.module("devices", ["services"])
 	  searchservice.update(devicesBatch);
 	  
 	  this.selection = selectionservice;
+	  this.selection.resetPageSelected();
 }]);
