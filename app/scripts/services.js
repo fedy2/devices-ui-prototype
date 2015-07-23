@@ -24,7 +24,8 @@ services.factory("devicesservice", ["devicesresource", "$q", "$log", "parsingser
 				deferred.resolve({
 					devices:filteredDevices,
 					start:start,
-					total:devices.length
+					total:devices.length,
+					query: query
 				});
             });
 			
@@ -47,6 +48,7 @@ services.factory("pagingservice", ["$route", "$location", "$log", "pagingConstan
 			this.metadata.start = deviceBatch.start;
 			this.metadata.end = deviceBatch.start + deviceBatch.devices.length;
 			this.metadata.total = deviceBatch.total;
+			this.metadata.query = deviceBatch.query;
 		
 			this.controls.hasNextPage = this.metadata.end < this.metadata.total;
 			this.controls.hasPrevPage = this.metadata.start > 0;
