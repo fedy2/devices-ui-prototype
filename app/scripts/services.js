@@ -372,7 +372,7 @@ services.factory("selectionservice", ["$log",
 		
 		this.isNone = function() {
 			return self.status.selected.length == 0 && !self.status.allSelected;
-		}
+		};
 		
 		this.isPartial = function() {
 			return self.status.selected.length != 0 && !self.status.allSelected;
@@ -380,7 +380,7 @@ services.factory("selectionservice", ["$log",
 		
 		this.isAll = function() {
 			return self.status.allSelected;
-		}
+		};
 		
 		
   	}

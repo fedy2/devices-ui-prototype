@@ -16,7 +16,7 @@ angular.module("devicesUiApp")
 	
 	this.toggleSelection = function(event) {
 		event.stopPropagation();
-		if (selectionservice.isPartial() || selectionservice.isAll()) selectionservice.clear();
+		if (!selectionservice.isNone()) selectionservice.clear();
 		else selectionservice.selectPage(searchservice.currentDevices);
 	};
 }]);
