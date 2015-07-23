@@ -12,7 +12,6 @@ angular.module("devicesUiApp")
 		self.groupedFilters = Stream(filters).groupingBy('property');
 	});
 	
-	this.metadata = pagingservice.metadata;
 	this.isActive = pagingservice.isFilterActive;
 	this.toggle = pagingservice.toggleFilter;
 
