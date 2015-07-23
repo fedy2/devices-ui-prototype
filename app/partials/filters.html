@@ -1,0 +1,16 @@
+<div class="panel panel-default criteria" ng-controller="FiltersCtrl as ctrl">
+    <div class="panel-heading">Filters</div>
+    <div class="panel-body">
+      <dl>
+        <dt ng-repeat-start="(name,filters) in ctrl.groupedFilters">{{name}}:</dt>
+        <dd ng-repeat-end>
+          <ul class="list-unstyled criteria-list">
+            <li ng-repeat="filter in filters">
+              <label>
+                  <input type="checkbox" ng-click="ctrl.toggle(filter)" ng-checked="ctrl.isActive(filter)"> {{filter.value}}
+              </label>
+            </li>
+          </ul>
+        </dd>
+    </div>
+</div>

@@ -1,0 +1,6 @@
+<div class="applied-critera" ng-controller="FiltersbarCtrl as ctrl">
+  <button type="button" class="btn btn-xs filter-button" ng-repeat="filter in ctrl.metadata.filters" ng-click="ctrl.removeFilter(filter)">
+    {{filter.value}}
+    <span class="glyphicon glyphicon-remove-circle"></span> 
+  </button>
+</div>

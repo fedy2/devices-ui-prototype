@@ -73,73 +73,7 @@
           <button class="btn btn-primary add-button center-block">Add New Device</button>
 
           <!-- FILTER CRITERIA -->
-          <div class="panel panel-default criteria">
-            <div class="panel-heading">Criteria</div>
-            <div class="panel-body">
-              <dl>
-                <dt>Type:</dt>
-                <dd>
-                  <ul class="list-unstyled criteria-list">
-                    <li>
-                      <label>
-                          <input type="checkbox"> Electricity meter
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                          <input type="checkbox" checked> Water meter
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                          <input type="checkbox" checked> Gas meter
-                      </label>
-                    </li>
-                  </ul>
-                </dd>
-                <dt>Software Version:</dt>
-                <dd>
-                  <ul class="list-unstyled criteria-list">
-                    <li>
-                      <label>
-                          <input type="checkbox"> 0.1.0
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                          <input type="checkbox"> 0.1.1
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                          <input type="checkbox"> 0.1.2
-                      </label>
-                    </li>
-                  </ul>
-                </dd>
-                <dt>Location:</dt>
-                <dd>
-                  <ul class="list-unstyled criteria-list">
-                    <li>
-                      <label>
-                          <input type="checkbox"> Dublin
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                          <input type="checkbox" checked> Pisa
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                          <input type="checkbox"> Cyprus
-                      </label>
-                    </li>
-                  </ul>
-                </dd>
-              </dl>
-            </div>
-      	</div>
+          <ng-include src="'partials/filters.html'"></ng-include>
           
           <!-- BOOKMARKED QUERIES -->
           <ng-include src="'partials/bookmarks.html'"></ng-include>
@@ -183,6 +117,8 @@
         <script src="scripts/controllers/searchbar.js"></script>
         <script src="scripts/controllers/toolbar.js"></script>
         <script src="scripts/controllers/bookmarks.js"></script>
+        <script src="scripts/controllers/filters.js"></script>
+        <script src="scripts/controllers/filtersbar.js"></script>
         <script src="scripts/controllers/device_list.js"></script>
         <script src="scripts/controllers/device_details.js"></script>
         <script src="scripts/lang/helper.js"></script>

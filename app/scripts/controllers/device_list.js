@@ -17,5 +17,6 @@ angular.module("devices", ["services"])
 		  if (idx >= 0) this.selected.splice(idx, 1);
 		  else this.selected.push(device.id);
 	  };
+	  
 
 }]);

@@ -68,6 +68,10 @@ body {
 
 }
 
+.filter-button {
+	margin-right: 5px;
+}
+
 .messages {
 	padding-bottom: 5px;
 	border-bottom: 1px solid #ddd;

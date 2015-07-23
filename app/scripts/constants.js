@@ -7,6 +7,7 @@ angular.module('devicesUiApp')
 				pageSize: 20,
 				startParam: 'start',
 				lenParam: 'len',
-				queryParam: 'q'
+				queryParam: 'q',
+				filtersParam: 'filters'
 			}
 			);
