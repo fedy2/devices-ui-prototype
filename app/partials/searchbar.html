@@ -1,7 +1,11 @@
 <div class="col-md-10 no-gutter" ng-controller="SearchbarCtrl as ctrl">
   <div class="form-group col-md-8">
     <div class="input-group">
-      <input type="text" class="form-control input-md" placeholder="location:pisa AND type:sensor" contenteditable="false" ng-model="ctrl.query">
+      <input type="text" class="form-control input-md" 
+      placeholder="location:pisa AND type:sensor" 
+      contenteditable="false" 
+      ng-model="ctrl.query"
+      ng-keyup="$event.keyCode == 13 && ctrl.search()">
       <div class="input-group-btn">
         <button class="btn btn-default">
           <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
