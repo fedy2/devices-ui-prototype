@@ -7,6 +7,9 @@ angular.module("devices", ["services"])
 	  this.devices = devicesBatch.devices;
 	  searchservice.update(devicesBatch);
 	  
+	  this.partialSelection = false;
+	  
+	  
 	  this.selected = [];
 	  this.isSelected = function(device) {
 		  return this.selected.indexOf(device.id)>=0;
