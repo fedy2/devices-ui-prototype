@@ -28,12 +28,14 @@ services.factory("devicesservice", ["devicesresource", "$q", "$log", "parsingser
 					});
 				}
 								
-				var filteredDevices = stream.slice(start, start + len).toArray();
+				var filteredDevices = stream.toArray();
+				
+				var devicesPage = filteredDevices.slice(start, start + len);
 				
 				deferred.resolve({
-					devices:filteredDevices,
+					devices:devicesPage,
 					start:start,
-					total:devices.length,
+					total:filteredDevices.length,
 					query: query,
 					filters: filters
 				});
