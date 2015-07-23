@@ -1,0 +1,8 @@
+<div class="panel panel-default" ng-controller="BookmarksCtrl as ctrl">
+  <div class="panel-heading">Bookmarks</div>
+  <div class="panel-body">
+    <ul class="list-unstyled bookmarks">
+      <li ng-repeat="bookmark in ctrl.bookmarks"><a href="#" ng-click="ctrl.open(bookmark);">{{bookmark.label}}</a></li>
+    </ul>
+  </div>
+</div>

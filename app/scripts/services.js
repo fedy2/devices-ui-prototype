@@ -70,7 +70,7 @@ services.factory("pagingservice", ["$route", "$location", "$log", "pagingConstan
 			$location.search(pagingConstants.startParam, 0);
 			$location.search(pagingConstants.lenParam, pagingConstants.pageSize);
 			$location.search(pagingConstants.queryParam, query);
-		}
+		};
 		
 	}
 	return new PagingService();
@@ -93,5 +93,35 @@ services.factory("parsingservice", ["$log",
 	
 	
 }]);
+
+services.factory("bookmarkservice", ["$log", 
+                                    function($log) {
+ 	
+ 	function BookmarkService() {
+ 		this.bookmarks = [
+ 		                  {
+ 		                	  id:"0",
+ 		                	  label:"Devices online in Pisa",
+ 		                	  query: "location:Pisa AND status:Online",
+ 		                	  filters:[]
+ 		                  },
+ 		                  {
+ 		                	  id:"1",
+ 		                	  label:"Devices to update",
+ 		                	  query: "group:toUpdate",
+ 		                	  filters:[]
+ 		                  },
+ 		                  {
+ 		                	  id:"2",
+ 		                	  label:"Extremo's devices in Zambia",
+ 		                	  query: "company:Extremo AND location:Zambia",
+ 		                	  filters:[]
+ 		                  }
+ 		                  ]; 
+ 	}
+ 	return new BookmarkService();
+ 	
+ 	
+ }]);
 
 
