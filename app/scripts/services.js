@@ -49,7 +49,7 @@ services.factory("devicesservice", ["devicesresource", "$q", "$log", "parsingser
 }]);
 
 services.factory("searchservice", ["$route", "$location", "$log", "pagingConstants", 
-                                   function($route, $location, $log, pagingConstants) {
+                                   function($route, $location, $log,  pagingConstants) {
 	
 	function SearchService() {
 		
@@ -59,6 +59,7 @@ services.factory("searchservice", ["$route", "$location", "$log", "pagingConstan
 				filters:[]
 		};
 		this.controls = {};
+		this.currentDevices = [];
 		
 		this.update = function(deviceBatch) {
 			this.metadata.start = deviceBatch.start;
@@ -66,6 +67,7 @@ services.factory("searchservice", ["$route", "$location", "$log", "pagingConstan
 			this.metadata.total = deviceBatch.total;
 			this.metadata.query = deviceBatch.query;
 			this.metadata.filters = deviceBatch.filters;
+			this.currentDevices = deviceBatch.devices;
 			
 			this.metadata.userQuery = deviceBatch.query;
 		
@@ -323,6 +325,66 @@ services.factory("filtersgenerator", ["$q", "$log", "devicesresource", "searchse
   		
   	}
   	return new FiltersGenerator();
+  	
+  	
+  }]);
+
+services.factory("selectionservice", ["$log", 
+                                     function($log) {
+  	
+  	function SelectionService() {
+  		var self = this;
+  		
+  		this.status = {};
+  		this.status.selected = [];
+  		this.status.allSelected = false;
+  		this.status.pageSelected = false;
+  		
+		this.isSelected = function(device) {
+			return self.status.allSelected || self.status.selected.indexOf(device.id)>=0;
+		};
+		
+		this.toggle = function(device) {
+			$log.info("Toggle ", device);
+			var idx = self.status.selected.indexOf(device.id);
+			if (idx >= 0) self.status.selected.splice(idx, 1);
+			else self.status.selected.push(device.id);
+		};
+		
+		this.clear = function() {
+			self.status.selected = [];
+			self.status.allSelected = false;
+			self.status.pageSelected = false;
+		};
+		
+		this.selectPage = function(devices) {
+			$log.info("select ", devices);
+			for (var i = 0; i<devices.length; i++) {
+				var device = devices[i];
+				if (self.status.selected.indexOf(device.id)<0) self.status.selected.push(device.id);
+			}
+		};
+		
+		this.selectAll = function() {
+			$log.info("selectAll ");
+			self.status.allSelected = true;
+		};
+		
+		this.isNone = function() {
+			return self.status.selected.length == 0 && !self.status.allSelected;
+		}
+		
+		this.isPartial = function() {
+			return self.status.selected.length != 0 && !self.status.allSelected;
+		};
+		
+		this.isAll = function() {
+			return self.status.allSelected;
+		}
+		
+		
+  	}
+  	return new SelectionService();
   	
   	
   }]);

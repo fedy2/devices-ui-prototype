@@ -1,25 +1,11 @@
 'use strict';
 
 angular.module("devices", ["services"])
-.controller("DeviceListCtrl", ["$route", "$log", "searchservice", "devicesBatch", 
-           function ($route, $log, searchservice, devicesBatch) {
+.controller("DeviceListCtrl", ["$route", "$log", "selectionservice", "searchservice", "devicesBatch", 
+           function ($route, $log, selectionservice, searchservice, devicesBatch) {
 	
 	  this.devices = devicesBatch.devices;
 	  searchservice.update(devicesBatch);
 	  
-	  this.partialSelection = false;
-	  
-	  
-	  this.selected = [];
-	  this.isSelected = function(device) {
-		  return this.selected.indexOf(device.id)>=0;
-	  };
-	  this.toggle = function(device) {
-		  $log.info("Toggle ", device);
-		  var idx = this.selected.indexOf(device.id);
-		  if (idx >= 0) this.selected.splice(idx, 1);
-		  else this.selected.push(device.id);
-	  };
-	  
-
+	  this.selection = selectionservice;
 }]);

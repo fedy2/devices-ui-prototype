@@ -9,18 +9,18 @@
     <div class="messages text-center" ng-if="ctrl.devices.length==0">
       No devices matched your search.
     </div>
-    <div class="messages text-center" ng-if="ctrl.partialSelection">
-      All 10 devices on this page are selected. <a href="#">Select all devices that match this search</a>
+    <div class="messages text-center" ng-if="ctrl.selection.isPartial()">
+      All {{ctrl.devices.length}} devices on this page have been selected. <a href="#" ng-click="ctrl.selection.selectAll()">Select all devices that match this search</a>
     </div>
     
     
     <!-- RESULTS -->
     <ul class="list-unstyled">
     
-      <li class="listitem" ng-repeat="device in ctrl.devices" ng-class="[{'listitem-selected': ctrl.isSelected(device)}]">
+      <li class="listitem" ng-repeat="device in ctrl.devices" ng-class="[{'listitem-selected': ctrl.selection.isSelected(device)}]">
         <input type="checkbox" class="listitem-check"
-        ng-click="ctrl.toggle(device)" 
-        ng-checked="ctrl.isSelected(device)">
+        ng-click="ctrl.selection.toggle(device)" 
+        ng-checked="ctrl.selection.isSelected(device)">
         <span>{{device.name}}</span>
         <span class="pull-right listitem-status" 
         ng-class="[

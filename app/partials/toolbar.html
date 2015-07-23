@@ -1,13 +1,20 @@
 <div class="btn-toolbar" role="toolbar" ng-controller="ToolbarCtrl as ctrl">
   <div class="btn-group">
     <div class="dropdown">
-      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-        <span class="glyphicon glyphicon-unchecked" aria-hidden="true"></span>
+      <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+        <span class="glyphicon" 
+        
+        ng-class="{
+        'glyphicon-unchecked' : ctrl.selection.isNone(), 
+        'glyphicon-sound-stereo' : ctrl.selection.isPartial(),
+        'glyphicon-check' : ctrl.selection.isAll()}"
+        
+        ng-click="ctrl.toggleSelection($event)"></span>
         <span class="caret"></span>
       </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <li><a href="#">None</a></li>
-        <li><a href="#">All</a></li>
+      <ul class="dropdown-menu">
+        <li><a href="#" ng-click="ctrl.selection.clear()">None</a></li>
+        <li><a href="#" ng-click="ctrl.selection.selectAll()">All</a></li>
       </ul>
     </div>
   </div>
