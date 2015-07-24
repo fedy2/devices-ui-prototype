@@ -19,9 +19,11 @@
     
       <li class="listitem" ng-repeat="device in ctrl.devices" ng-class="[{'listitem-selected': ctrl.selection.isSelected(device)}]"
         ng-click="ctrl.showDevice(device)">
+        
         <input type="checkbox" class="listitem-check"
-        ng-click="ctrl.selection.toggle(device)" 
+        ng-click="ctrl.toggle($event, device)" 
         ng-checked="ctrl.selection.isSelected(device)">
+        
         <span>{{device.name}}</span>
         <span class="pull-right listitem-status" 
         ng-class="[

@@ -1,5 +1,5 @@
 <div class="btn-toolbar" role="toolbar" ng-controller="ToolbarCtrl as ctrl">
-  <div class="btn-group">
+  <div class="btn-group" ng-hide="ctrl.routing.isSingleDevice()">
     <div class="dropdown">
       <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
         <span class="glyphicon" 
@@ -18,15 +18,21 @@
       </ul>
     </div>
   </div>
-  <button class="btn btn-default" ng-hide="ctrl.selection.isNone()">Edit</button>
+  
+    <button class="btn btn-default" ng-show="ctrl.routing.isSingleDevice()" ng-click="ctrl.goBack()">
+    <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+  </button>
+
+  <button class="btn btn-default" ng-hide="ctrl.selection.isNone() || ctrl.routing.isSingleDevice()">Edit</button>
   <button class="btn btn-default" ng-hide="ctrl.selection.isNone()">Remove</button>
   <button class="btn btn-default" ng-hide="ctrl.selection.isNone()">Update</button>
-  <button class="btn btn-default">
+
+   <button class="btn btn-default" ng-hide="ctrl.routing.isSingleDevice()">
     <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
   </button>
   
   
-  <div class="btn-group pull-right" role="group">
+  <div class="btn-group pull-right" role="group" ng-hide="ctrl.routing.isSingleDevice()">
 
       <button class="btn btn-default" ng-disabled="!ctrl.controls.hasPrevPage" ng-click="ctrl.movePrevPage()">
         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -38,7 +44,7 @@
   </div>
   
   <!-- PAGER STATUS -->
-  <div class="pull-right pager-status">
+  <div class="pull-right pager-status" ng-hide="ctrl.routing.isSingleDevice()">
     <span class="pager-status-number">{{ctrl.metadata.start}} - {{ctrl.metadata.end}}</span> of <span class="pager-status-number">{{ctrl.metadata.total}}</span>
   </div>
 </div>

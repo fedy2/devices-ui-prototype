@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module("devicesUiApp")
-.controller("DeviceListCtrl", ["$route", "$log", "$location", "selectionservice", "searchservice", "devicesBatch", 
-           function ($route, $log, $location, selectionservice, searchservice, devicesBatch) {
+.controller("DeviceListCtrl", ["$route", "$log", "routingservice", "selectionservice", "searchservice", "devicesBatch", 
+           function ($route, $log, routingservice, selectionservice, searchservice, devicesBatch) {
 	
 	  this.devices = devicesBatch.devices;
 	  searchservice.update(devicesBatch);
@@ -10,7 +10,12 @@ angular.module("devicesUiApp")
 	  this.selection = selectionservice;
 	  this.selection.resetPageSelected();
 	  
+	  this.toggle = function(event, device) {
+		  event.stopPropagation();
+		  selectionservice.toggle(device);
+	  };
+	  
 	  this.showDevice = function(device) {
-		  $location.path('/projects/demo/devices/'+device.id);
+		  routingservice.goSingleDevice(device);
 	  };
 }]);
