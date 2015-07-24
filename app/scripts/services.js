@@ -43,6 +43,18 @@ services.factory("devicesservice", ["devicesresource", "$q", "$log", "parsingser
 			
 			return deferred.promise;
 		};
+		
+		this.get = function(deviceId) {
+			$log.info("get deviceId: "+deviceId);
+			var deferred = $q.defer();
+			
+			devicesresource.query().$promise.then(function(devices) {
+				var found = Stream(devices).filter(function (device){return device.id === deviceId;}).findFirst().orElse(null);
+				deferred.resolve(found);
+            });
+			
+			return deferred.promise;
+		};
 	}
 	return new DeviceService();
 	

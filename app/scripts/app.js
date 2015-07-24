@@ -10,14 +10,14 @@
  */
 angular
   .module('devicesUiApp', [
-    'devices',                           
     'ngAnimate',
     'ngCookies',
     'ngMessages',
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch', 
+    'services'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -38,8 +38,14 @@ angular
       })
       .when('/projects/:projectId/devices/:deviceId', {
         templateUrl: 'views/device_details.html',
-        controller: 'DeviceDetails',
-        controllerAs: 'ctrl'
+        controller: 'DeviceDetailsCtrl',
+        controllerAs: 'ctrl',
+        resolve: {
+        	device : function($route, devicesservice) {
+        		var deviceId = $route.current.params.deviceId;
+        		return devicesservice.get(deviceId);
+        	}
+        }
       })
       .otherwise({
         redirectTo: '/projects/demo/devices'

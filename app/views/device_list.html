@@ -3,7 +3,7 @@
   <div class="panel-body">
   
     <!-- APPLIED FILTERS -->
-  <ng-include src="'partials/filtersbar.html'"></ng-include>
+    <ng-include src="'partials/filtersbar.html'"></ng-include>
     
     <!-- MESSAGES -->
     <div class="messages text-center" ng-if="ctrl.devices.length==0">
@@ -17,7 +17,8 @@
     <!-- RESULTS -->
     <ul class="list-unstyled">
     
-      <li class="listitem" ng-repeat="device in ctrl.devices" ng-class="[{'listitem-selected': ctrl.selection.isSelected(device)}]">
+      <li class="listitem" ng-repeat="device in ctrl.devices" ng-class="[{'listitem-selected': ctrl.selection.isSelected(device)}]"
+        ng-click="ctrl.showDevice(device)">
         <input type="checkbox" class="listitem-check"
         ng-click="ctrl.selection.toggle(device)" 
         ng-checked="ctrl.selection.isSelected(device)">

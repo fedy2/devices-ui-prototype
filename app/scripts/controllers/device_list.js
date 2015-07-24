@@ -1,12 +1,16 @@
 'use strict';
 
-angular.module("devices", ["services"])
-.controller("DeviceListCtrl", ["$route", "$log", "selectionservice", "searchservice", "devicesBatch", 
-           function ($route, $log, selectionservice, searchservice, devicesBatch) {
+angular.module("devicesUiApp")
+.controller("DeviceListCtrl", ["$route", "$log", "$location", "selectionservice", "searchservice", "devicesBatch", 
+           function ($route, $log, $location, selectionservice, searchservice, devicesBatch) {
 	
 	  this.devices = devicesBatch.devices;
 	  searchservice.update(devicesBatch);
 	  
 	  this.selection = selectionservice;
 	  this.selection.resetPageSelected();
+	  
+	  this.showDevice = function(device) {
+		  $location.path('/projects/demo/devices/'+device.id);
+	  };
 }]);
