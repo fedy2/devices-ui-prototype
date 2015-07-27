@@ -10,8 +10,7 @@ angular.module("devicesUiApp")
 	this.selection = selectionservice;
 	this.selection.resetPageSelected();
 	
-	this.toggleSelection = function(event) {
-		event.stopPropagation();
+	this.toggleSelection = function() {
 		if (!selectionservice.isNone()) selectionservice.clear();
 		else selectionservice.selectPage(searchservice.currentDevices);
 	};
@@ -25,5 +24,15 @@ angular.module("devicesUiApp")
 	  
 	this.showDevice = function(device) {
 		routingservice.goSingleDevice(device);
+	};
+	
+	//ADD ATTRIBUTE
+	this.nameField = "";
+	this.valueField = "";
+	
+	this.addAttribute = function() {
+		self.nameField = "";
+		self.valueField = "";		
+		$('#addAttributeModal').modal();
 	};
 }]);

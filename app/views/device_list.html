@@ -3,8 +3,7 @@
 
   <!-- SELECTION -->
   <div class="btn-group">
-    <div class="dropdown">
-      <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+      <button class="btn btn-default" type="button" ng-click="ctrl.toggleSelection()">
         <span class="glyphicon" 
         
         ng-class="{
@@ -12,18 +11,31 @@
         'glyphicon-sound-stereo' : ctrl.selection.isPartial(),
         'glyphicon-check' : ctrl.selection.isAll()}"
         
-        ng-click="ctrl.toggleSelection($event)"></span>
+        ></span>
+      </button>
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <span class="caret"></span>
+        <span class="sr-only">Selection Dropdown</span>
       </button>
       <ul class="dropdown-menu">
         <li><a href="#" ng-click="ctrl.selection.clear()">None</a></li>
         <li><a href="#" ng-click="ctrl.selection.selectAll()">All</a></li>
       </ul>
-    </div>
   </div>
 
   <!-- EDIT -->
-  <button class="btn btn-default" ng-hide="ctrl.selection.isNone()">Edit</button>
+  <div class="btn-group" ng-hide="ctrl.selection.isNone()">
+    <div class="dropdown">
+      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        Edit
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <li><a href="#" ng-click="ctrl.addAttribute()">Add attribute</a></li>
+        <li><a href="#">Attributes bulk edit</a></li>
+      </ul>
+    </div>
+  </div>
   
   <!-- REMOVE -->
   <button class="btn btn-default" ng-hide="ctrl.selection.isNone()">Remove</button>
@@ -93,3 +105,39 @@
     
   </div>
 </div>
+
+
+<!-- ADD ATTRIBUTE -->
+<div class="modal fade" id="addAttributeModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Add attribute</h4>
+      </div>
+      <div class="modal-body">
+         
+     <form name="attributeForm">
+         <div class="form-group" ng-class="[{'has-error': attributeForm.name.$invalid, 'has-success': attributeForm.name.$valid}]" >
+            <label class="control-label" for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" required ngMinlength="1" ng-model="ctrl.nameField">
+          </div>
+        <div class="form-group" ng-class="[{'has-error': attributeForm.value.$invalid, 'has-success': attributeForm.name.$valid}]">
+          <label class="control-label" for="value">Value</label>
+          <input type="text" class="form-control" id="value" name="value" required ngMinlength="1" ng-model="ctrl.valueField">
+        </div>
+         <div class="checkbox">
+            <label>
+              <input type="checkbox"> Override if already present
+            </label>
+          </div>
+      </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" ng-click="ctrl.saveAttribute()"  ng-disabled="attributeForm.$invalid">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
