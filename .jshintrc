@@ -9,9 +9,11 @@
   "node": true,
   "strict": true,
   "undef": true,
-  "unused": false,
+  "unused": true,
   "globals": {
     "angular": false,
-    "Stream": false
+    "Stream": false,
+    "$": false,
+    "LangParser": false
   }
 }

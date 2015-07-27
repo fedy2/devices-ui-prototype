@@ -6,7 +6,7 @@
  */
 function LangParser () {}
 
-LangParser.equals = function(a ,b){ return a === b};
+LangParser.equals = function(a ,b){ return a === b; };
 
 /**
  * Checks if the passed Object has the specified couple of key and value both as property or as attribute.
@@ -19,9 +19,8 @@ LangParser.hasKeyValue = function (obj, key, value) {
     if (obj.hasOwnProperty(key) && LangParser.equals(value, obj[key])) return true;
     
     if (obj.hasOwnProperty("attributes")) {
-		var attributes = obj["attributes"];
-		for (var i = 0; i < attributes.length; i++) {
-		    var attribute = attributes[i];
+		for (var i = 0; i < obj.attributes.length; i++) {
+		    var attribute = obj.attributes[i];
 		    if (LangParser.equals(attribute.name,key) && LangParser.equals(attribute.value, value)) return true;
 		}
 	}
@@ -43,9 +42,8 @@ LangParser.hasValue = function (obj, value) {
 	}
 	
 	if (obj.hasOwnProperty("attributes")) {
-		var attributes = obj["attributes"];
-		for (var i = 0; i < attributes.length; i++) {
-		    var attribute = attributes[i];
+		for (i = 0; i < obj.attributes.length; i++) {
+		    var attribute = obj.attributes[i];
 		    if (LangParser.equals(attribute.value, value)) return true;
 		}
 	}

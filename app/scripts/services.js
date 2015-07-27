@@ -8,7 +8,8 @@ var services = angular.module("services", ["resources"]);
 /**
  * Devices service. Wraps the device resource in order to simulate the backend operations (filtering, paging, searching, single device info).
  */
-services.factory("devicesservice", ["devicesresource", "$q", "$log", "parsingservice", function(devicesresource, $q, $log, parsingservice) {
+services.factory("devicesservice", ["devicesresource", "$q", "$log", "parsingservice", 
+                                    function(devicesresource, $q, $log, parsingservice) {
 	
 	function DeviceService() {
 		
@@ -20,17 +21,17 @@ services.factory("devicesservice", ["devicesresource", "$q", "$log", "parsingser
 				
 				var stream = new Stream(devices);
 				   
-				if (query != null) {
+				if (query !== null) {
 					var filterFunction = parsingservice.parse(query);
 					stream.filter(filterFunction);
 				}
 				
-				if (filters != null && filters.length > 0) {
+				if (filters !== null && filters.length > 0) {
 					stream.filter(function(device){
-						return Stream(filters)
+						return new Stream(filters)
 							.allMatch(function(filter){
 								return LangParser.hasKeyValue(device, filter.property, filter.value);
-							})
+							});
 					});
 				}
 								
@@ -55,7 +56,7 @@ services.factory("devicesservice", ["devicesresource", "$q", "$log", "parsingser
 			var deferred = $q.defer();
 			
 			devicesresource.query().$promise.then(function(devices) {
-				var found = Stream(devices).filter(function (device){return device.id === deviceId;}).findFirst().orElse(null);
+				var found = new Stream(devices).filter(function (device){return device.id === deviceId;}).findFirst().orElse(null);
 				deferred.resolve(found);
             });
 			
@@ -114,7 +115,7 @@ services.factory("searchservice", ["$route", "$location", "$log", "pagingConstan
 		//FILTERS
 		this.indexOfFilter = function(toSearch) {
 			for (var i = 0; i < self.metadata.filters.length; i++) {
-			    var filter = self.metadata.filters[i]
+			    var filter = self.metadata.filters[i];
 				if (filter.property === toSearch.property && filter.value === toSearch.value) return i;
 			}
 			return -1;
@@ -168,23 +169,23 @@ services.factory("searchservice", ["$route", "$location", "$log", "pagingConstan
 		};
 		
 		this.encodeFilters = function(filters) {
-			return Stream(filters)
+			return new Stream(filters)
 			.map(function(filter){ 
 				return filter.property+","+filter.value;
 				})
 			.toArray();
-		}
+		};
 		
 		this.decodeFilters = function(values) {
 			if (typeof values !== 'object') values = [values];
-			var filters = Stream(values)
+			var filters = new Stream(values)
 			.map(function(value){
 				var tokens = value.split(",");
 				return {property:tokens[0],value:tokens[1]};
 				})
 			.toArray();
 			return filters;
-		}
+		};
 
 	}
 	return new SearchService();
@@ -202,7 +203,8 @@ services.factory("parsingservice", ["$log",
 			$log.info("query", query);
 			var functionCode = LangParser.parser.parse(query);
 			$log.info("functionCode", functionCode);
-			return Function("obj",functionCode);
+			/*jshint -W054 */
+			return new Function("obj",functionCode);
 		};
 	}
 	return new ParsingService();
@@ -213,8 +215,7 @@ services.factory("parsingservice", ["$log",
 /**
  * Bookmark service. Manages the bookmark instances. Static list for this prototype.
  */
-services.factory("bookmarkservice", ["$log", 
-                                    function($log) {
+services.factory("bookmarkservice", [function() {
  	
  	function BookmarkService() {
  		this.bookmarks = [
@@ -246,17 +247,17 @@ services.factory("bookmarkservice", ["$log",
 /**
  * Filters generator. Generates the filters list based on current devices list. It is a backend simulation.
  */
-services.factory("filtersgenerator", ["$q", "$log", "devicesresource", "searchservice", 
-                                     function($q, $log, devicesresource, searchservice) {
+services.factory("filtersgenerator", ["$q", "$log", "devicesresource",
+                                     function($q, $log, devicesresource) {
   	
   	function FiltersGenerator() {
   		
   		var self = this;
   		
   		this.isPrimitive = function(value) {
-  			return typeof value === 'number' 
-  				|| typeof value === 'string'
-  				|| typeof value === 'boolean';
+  			return typeof value === 'number' || 
+  				   typeof value === 'string' || 
+  				   typeof value === 'boolean';
   		};
   		
   		this.getFilters = function() {
@@ -266,7 +267,7 @@ services.factory("filtersgenerator", ["$q", "$log", "devicesresource", "searchse
   				
   				//extract properties
   				var properties = [];
-  				Stream(devices)
+  				new Stream(devices)
   				.forEach(function(device){
   					//$log.info("device: ",device);
   					  					
@@ -279,9 +280,8 @@ services.factory("filtersgenerator", ["$q", "$log", "devicesresource", "searchse
   					}
   				
   					if (device.hasOwnProperty("attributes")) {
-  						var attributes = device["attributes"];
-  						for (var i = 0; i < attributes.length; i++) {
-  						    var attribute = attributes[i];
+  						for (i = 0; i < device.attributes.length; i++) {
+  						    var attribute = device.attributes[i];
   						    properties.push({key:attribute.name,value:attribute.value});
   						}
   					}
@@ -289,7 +289,7 @@ services.factory("filtersgenerator", ["$q", "$log", "devicesresource", "searchse
   				
   				//count properties
   				var propertiesCounters = {};
-  				Stream(properties)
+  				new Stream(properties)
   				.forEach(function(property){
   					var key = property.key;
   					var value = property.value;
@@ -328,7 +328,8 @@ services.factory("filtersgenerator", ["$q", "$log", "devicesresource", "searchse
 				  
 				  //we add filters only with more than one value
 				  if (filteredValues.length>1) {
-					  Stream(filteredValues).forEach(function(value){
+					  /*jshint loopfunc: true */
+					  new Stream(filteredValues).forEach(function(value){
 						  filters.push({property:propertyName, value:value});
 					  });
 				  }
@@ -397,19 +398,19 @@ services.factory("selectionservice", ["$log",
 		};
 		
 		this.isNone = function() {
-			return self.selected.length == 0 && !self.allSelected;
+			return self.selected.length === 0 && !self.allSelected;
 		};
 		
 		this.isPartial = function() {
-			return self.selected.length != 0 && !self.allSelected;
+			return self.selected.length !== 0 && !self.allSelected;
 		};
 		
 		this.isPageSelected = function () {
 			return self.pageSelected;
-		}
+		};
 		this.resetPageSelected = function () {
 			self.pageSelected = false;
-		}
+		};
 		
 		this.isAll = function() {
 			return self.allSelected;
@@ -423,12 +424,10 @@ services.factory("selectionservice", ["$log",
 /**
  * Routing service. Offers helpers method for location management.
  */
-services.factory("routingservice", ["$location", "$log",  
-                                     function($location, $log) {
+services.factory("routingservice", ["$location",  
+                                     function($location) {
   	
   	function RoutingService() {
-  		
-  		var self = this;
   		
   		this.goSingleDevice = function(device) {
   			$location.path('/projects/demo/devices/'+device.id);

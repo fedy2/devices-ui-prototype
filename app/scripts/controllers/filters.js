@@ -12,7 +12,7 @@ angular.module("devicesUiApp")
 	this.groupedFilters =[];
 	
 	filtersgenerator.getFilters().then(function(filters){
-		self.groupedFilters = Stream(filters).groupingBy('property');
+		self.groupedFilters = new Stream(filters).groupingBy('property');
 	});
 	
 	this.isActive = searchservice.isFilterActive;

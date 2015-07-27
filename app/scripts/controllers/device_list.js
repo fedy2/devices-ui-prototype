@@ -7,6 +7,8 @@ angular.module("devicesUiApp")
 .controller("DeviceListCtrl", ["routingservice", "selectionservice", "searchservice", "devicesBatch", 
            function (routingservice, selectionservice, searchservice, devicesBatch) {
 	
+	var self = this;
+	
 	this.devices = devicesBatch.devices;
 	this.search = searchservice;
 	searchservice.update(devicesBatch);
