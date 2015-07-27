@@ -408,29 +408,24 @@ services.factory("selectionservice", ["$log",
 	
   }]);
 
-services.factory("routingservice", ["$location", "$log", "$rootScope", 
-                                     function($location, $log, $rootScope) {
+services.factory("routingservice", ["$location", "$log",  
+                                     function($location, $log) {
   	
   	function RoutingService() {
   		
   		var self = this;
   		
-  		this.singleDevice = false;
-  		
-  		this.isSingleDevice = function(){ return self.singleDevice;};
-  		
   		this.goSingleDevice = function(device) {
   			$location.path('/projects/demo/devices/'+device.id);
+  		};
+  		
+  		this.goEditSingleDevice = function(device) {
+  			$location.path('/projects/demo/devices/'+device.id+'/edit');
   		};
   		
   		this.goDevicesList = function() {
   			$location.path('/projects/demo/devices');
   		};
-  		
-  		$rootScope.$on('$routeChangeSuccess', function(event, current, previous) { 
-  			$log.info("$routeChangeSuccess", current);
-  			self.singleDevice = current.templateUrl == "views/device_details.html";
-  		});
   	}
   	return new RoutingService();
   	

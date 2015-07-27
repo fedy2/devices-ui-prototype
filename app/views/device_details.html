@@ -1,3 +1,18 @@
+<!-- TOOLBAR -->
+<div class="btn-toolbar" role="toolbar">
+  
+  <button class="btn btn-default" ng-click="ctrl.goBack()">
+    <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+  </button>
+
+  <button class="btn btn-default">Edit</button>
+  <button class="btn btn-default">Update</button>
+
+   <button class="btn btn-default">
+    <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+  </button>
+</div>
+
 <!-- SINGLE DEVICE -->
 <div class="panel no-gutter results-area">
   <div class="panel-body">
@@ -23,14 +38,14 @@
         <tr>
           <th>Name</th>
           <th>Value</th>
-          <th>Action</th>
+          <th ng-show="ctrl.edit"></th>
         </tr>
       </thead>
       <tbody>
         <tr ng-repeat="attribute in ctrl.device.attributes">
           <td class="col-md-4">{{attribute.name}}</td>
           <td class="col-md-4">{{attribute.value}}</td>
-          <td class="col-md-1">
+          <td class="col-md-1" ng-show="ctrl.edit">
             <button class="btn btn-default btn-xs">
               <span class="glyphicon glyphicon-pencil" aria-hidden="true" ng-click="ctrl.editAttribute(attribute)"></span>
             </button>
@@ -40,7 +55,7 @@
           </td>
         </tr>
         
-        <tr>
+        <tr ng-show="ctrl.edit">
             <td class="col-md-4">
             </td>
             <td class="col-md-4">

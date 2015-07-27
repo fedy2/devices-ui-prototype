@@ -1,11 +1,17 @@
 'use strict';
 
 angular.module("devicesUiApp")
-.controller("DeviceDetailsCtrl", ["$route", "$log", "selectionservice", "searchservice", "device", 
-           function ($route, $log, selectionservice, searchservice, device) {
+.controller("DeviceDetailsCtrl", ["$route", "$log", "routingservice", "searchservice", "device", 
+           function ($route, $log, routingservice, searchservice, device) {
 	
 	var self = this;
+	
 	this.device = device;
+	this.edit = false;
+	
+	this.goBack = function() {
+		routingservice.goDevicesList();
+	};
 	
 	this.attribute = null;
 	this.nameField = "";
