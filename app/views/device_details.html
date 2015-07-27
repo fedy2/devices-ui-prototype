@@ -5,12 +5,8 @@
     <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
   </button>
 
-  <button class="btn btn-default">Edit</button>
+  <button class="btn btn-default" ng-click="ctrl.goEdit()">Edit</button>
   <button class="btn btn-default">Update</button>
-
-   <button class="btn btn-default">
-    <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
-  </button>
 </div>
 
 <!-- SINGLE DEVICE -->
@@ -38,33 +34,12 @@
         <tr>
           <th>Name</th>
           <th>Value</th>
-          <th ng-show="ctrl.edit"></th>
         </tr>
       </thead>
       <tbody>
         <tr ng-repeat="attribute in ctrl.device.attributes">
           <td class="col-md-4">{{attribute.name}}</td>
           <td class="col-md-4">{{attribute.value}}</td>
-          <td class="col-md-1" ng-show="ctrl.edit">
-            <button class="btn btn-default btn-xs">
-              <span class="glyphicon glyphicon-pencil" aria-hidden="true" ng-click="ctrl.editAttribute(attribute)"></span>
-            </button>
-            <button class="btn btn-default btn-xs">
-              <span class="glyphicon glyphicon-remove-circle" aria-hidden="true" ng-click="ctrl.removeAttribute(attribute)"></span>
-            </button>
-          </td>
-        </tr>
-        
-        <tr ng-show="ctrl.edit">
-            <td class="col-md-4">
-            </td>
-            <td class="col-md-4">
-            </td>
-            <td class="col-md-1">
-              <button class="btn btn-default btn-xs" ng-click="ctrl.editNewAttribute()">
-                <span class="glyphicon glyphicon-plus" ></span>
-              </button>
-            </td>
         </tr>
       </tbody>
     </table>
@@ -72,63 +47,3 @@
       </dl>
   </div>
 </div>
-
-<!-- ATTRIBUTE EDITING -->
-<div class="modal fade" id="editAttributeModal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Edit attribute</h4>
-      </div>
-      <div class="modal-body">
-         
-	   <form name="attributeForm">
-         <div class="form-group" ng-class="[{'has-error': attributeForm.name.$invalid, 'has-success': attributeForm.name.$valid}]" >
-            <label class="control-label" for="name">Name</label>
-            <input type="text" class="form-control" id="name" name="name" required ngMinlength="1" ng-model="ctrl.nameField">
-          </div>
-        <div class="form-group" ng-class="[{'has-error': attributeForm.value.$invalid, 'has-success': attributeForm.name.$valid}]">
-          <label class="control-label" for="value">Value</label>
-          <input type="text" class="form-control" id="value" name="value" required ngMinlength="1" ng-model="ctrl.valueField">
-        </div>
-      </form>
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-primary" ng-click="ctrl.saveAttribute()"  ng-disabled="attributeForm.$invalid">Save changes</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-
-<!-- ATTRIBUTE REMOVE -->
-<div class="modal fade" id="removeAttributeModal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Delete attribute</h4>
-      </div>
-      <div class="modal-body">
-        <p>      
-          Are you sure to delete this attribute?
-        </p>
-         <div class="form-group">
-            <label class="control-label">Name</label>
-            <div>{{ctrl.attribute.name}}</div>
-          </div>
-        <div class="form-group">
-          <label class="control-label">Value</label>
-          <div>{{ctrl.attribute.value}}</div>
-        </div>
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-primary" ng-click="ctrl.deleteAttribute()">Delete</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->

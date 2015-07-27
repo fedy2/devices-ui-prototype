@@ -44,23 +44,17 @@ angular
         	device : function($route, devicesservice) {
         		var deviceId = $route.current.params.deviceId;
         		return devicesservice.get(deviceId);
-        	},
-        	edit : function() {
-        		return false;
         	}
         }
       })
       .when('/projects/:projectId/devices/:deviceId/edit', {
-        templateUrl: 'views/device_details.html',
-        controller: 'DeviceDetailsCtrl',
+        templateUrl: 'views/edit_device_details.html',
+        controller: 'EditDeviceDetailsCtrl',
         controllerAs: 'ctrl',
         resolve: {
         	device : function($route, devicesservice) {
         		var deviceId = $route.current.params.deviceId;
         		return devicesservice.get(deviceId);
-        	},
-        	edit : function() {
-        		return true;
         	}
         }
       })

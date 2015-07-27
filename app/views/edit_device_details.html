@@ -1,0 +1,60 @@
+<!-- TOOLBAR -->
+<div class="btn-toolbar" role="toolbar">
+  
+  <button class="btn btn-default" ng-click="ctrl.cancel()">Cancel</button>
+
+  <button class="btn btn-primary" ng-click="ctrl.save()">Save</button>
+</div>
+
+<!-- SINGLE DEVICE EDIT-->
+<div class="panel no-gutter results-area">
+  <div class="panel-body">
+    <h3>{{ctrl.device.name}}</h3>
+    
+    <form name="editForm">
+    <dl class="dl-horizontal device-properties">
+      <dt>Id</dt>
+      <dd>{{ctrl.device.id}}</dd>
+      <dt><label class="control-label" for="name">Name</label></dt>
+      <dd><input type="text" class="form-control editable-property" id="name" name="name" required ngMinlength="1" ng-model="ctrl.device.name"></dd>
+      <dt><label class="control-label" for="type">Type</label></dt>
+      <dd><input type="text" class="form-control editable-property" id="type" name="type" required ngMinlength="1" ng-model="ctrl.device.type"></dd>
+    <dt style="padding-top:5px">Properties</dt>
+    <dd>
+    <table class="table table-hover table-condensed properties-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Value</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="attribute in ctrl.device.attributes">
+          <td class="col-md-6"><input type="text" class="form-control" required ngMinlength="1" ng-model="attribute.name"></td>
+          <td class="col-md-6"><input type="text" class="form-control" required ngMinlength="1" ng-model="attribute.value"></td>
+          <td class="col-md-1 action-cell">
+            <button class="btn btn-default btn-xs center-block">
+              <span class="glyphicon glyphicon-remove-circle" aria-hidden="true" ng-click="ctrl.removeAttribute(attribute)"></span>
+            </button>
+          </td>
+        </tr>
+        
+        <tr>
+            <td class="col-md-6">
+            </td>
+            <td class="col-md-6">
+            </td>
+            <td class="col-md-1 action-cell">
+              <button class="btn btn-default btn-xs" ng-click="ctrl.addNewAttribute()">
+                <span class="glyphicon glyphicon-plus" ></span>
+              </button>
+            </td>
+        </tr>
+      </tbody>
+    </table>
+    </dd>
+      </dl>
+      </form>
+  </div>
+</div>

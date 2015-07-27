@@ -18,3 +18,12 @@
 .properties-table {
 	width: 50%;
 }
+
+.editable-property {
+	width: 50%;
+	margin-bottom: 5px;
+}
+
+.action-cell {
+	vertical-align: middle !important;
+}
