@@ -1,5 +1,8 @@
 'use strict';
 
+/**
+ * Application resources.
+ */
 var resources = angular.module("resources", ["ngResource"]);
 
 resources.factory("devicesresource", ["$resource", function($resource) {

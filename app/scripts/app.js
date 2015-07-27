@@ -1,10 +1,6 @@
 'use strict';
 
 /**
- * @ngdoc overview
- * @name devicesUiApp
- * @description
- * # devicesUiApp
  *
  * Main module of the application.
  */
@@ -19,6 +15,7 @@ angular
     'ngTouch', 
     'services'
   ])
+  //ROUTING CONFIGURATION
   .config(function ($routeProvider) {
     $routeProvider
       .when('/projects/:projectId/devices', {
@@ -62,6 +59,7 @@ angular
         redirectTo: '/projects/demo/devices'
       });
   })
+  //LOCATION PROVIDER CONFIGURATION
   .config(function ($locationProvider) {
 	  $locationProvider.html5Mode(true);
   });

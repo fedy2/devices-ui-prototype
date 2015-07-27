@@ -1,10 +1,20 @@
 'use strict';
 
+
+/**
+ * Helper methods for device filter generated functions.
+ */
 function LangParser () {}
 
 LangParser.equals = function(a ,b){ return a === b};
 
- 
+/**
+ * Checks if the passed Object has the specified couple of key and value both as property or as attribute.
+ * @param obj the object to check.
+ * @param key the key.
+ * @param value the value-
+ * @returns {Boolean} <code>true</code> if the couple is found, <code>false</code> otherwise.
+ */
 LangParser.hasKeyValue = function (obj, key, value) {
     if (obj.hasOwnProperty(key) && LangParser.equals(value, obj[key])) return true;
     
@@ -17,7 +27,13 @@ LangParser.hasKeyValue = function (obj, key, value) {
 	}
     return false;
 };
- 
+
+/**
+ * Checks if the passes Object has a property value or attribute value the specified value.
+ * @param obj the object to check.
+ * @param value the value to search.
+ * @returns {Boolean} <code>true</code> if the value has been found, <code>false</code> otherwise.
+ */
 LangParser.hasValue = function (obj, value) {
 	var keys = Object.keys(obj);
 

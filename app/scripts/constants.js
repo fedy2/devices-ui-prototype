@@ -1,5 +1,7 @@
 'use strict';
-
+/**
+ * Application constants.
+ */
 angular.module('devicesUiApp')
 	.constant(
 			'pagingConstants',

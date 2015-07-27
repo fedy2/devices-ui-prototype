@@ -1,8 +1,11 @@
 'use strict';
 
+/**
+ * Filters controller.
+ */
 angular.module("devicesUiApp")
-.controller("FiltersCtrl", ["$log", "filtersgenerator", "searchservice", 
-           function ($log, filtersgenerator, searchservice) {
+.controller("FiltersCtrl", ["filtersgenerator", "searchservice", 
+           function (filtersgenerator, searchservice) {
 	
 	var self = this;
 	

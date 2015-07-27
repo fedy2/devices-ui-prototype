@@ -2,7 +2,7 @@
   <div class="form-group col-md-8">
     <div class="input-group">
       <input type="text" class="form-control input-md" 
-      placeholder="location:pisa AND type:sensor" 
+      placeholder="Type here your query..." 
       contenteditable="false" 
       ng-model="ctrl.metadata.userQuery"
       ng-keyup="$event.keyCode == 13 && ctrl.search()">
@@ -13,6 +13,5 @@
       </div>
     </div>
   </div>
-
   <button type="submit" class="btn btn-primary" ng-click="ctrl.search()">Search</button>
 </div>

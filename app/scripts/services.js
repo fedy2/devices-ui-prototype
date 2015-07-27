@@ -1,7 +1,13 @@
 'use strict';
 
+/**
+ * Application services.
+ */
 var services = angular.module("services", ["resources"]);
 
+/**
+ * Devices service. Wraps the device resource in order to simulate the backend operations (filtering, paging, searching, single device info).
+ */
 services.factory("devicesservice", ["devicesresource", "$q", "$log", "parsingservice", function(devicesresource, $q, $log, parsingservice) {
 	
 	function DeviceService() {
@@ -60,6 +66,9 @@ services.factory("devicesservice", ["devicesresource", "$q", "$log", "parsingser
 	
 }]);
 
+/**
+ * Search service. Handles the search operation, the result paging and the filter toggling.
+ */
 services.factory("searchservice", ["$route", "$location", "$log", "pagingConstants", 
                                    function($route, $location, $log,  pagingConstants) {
 	
@@ -89,7 +98,6 @@ services.factory("searchservice", ["$route", "$location", "$log", "pagingConstan
 		
 		
 		//PAGE NAVIGATION
-		
 		this.nextPage = function() {
 			var start = parseInt(this.metadata.start) + pagingConstants.pageSize;
 			$location.search(pagingConstants.startParam, start);
@@ -97,7 +105,6 @@ services.factory("searchservice", ["$route", "$location", "$log", "pagingConstan
 		};
 		
 		this.prevPage = function() {
-			$log.info("prev page");
 			var start = Math.max(parseInt(this.metadata.start) - pagingConstants.pageSize, 0);
 			$location.search(pagingConstants.startParam, start);
 			$location.search(pagingConstants.lenParam, pagingConstants.pageSize);
@@ -105,7 +112,6 @@ services.factory("searchservice", ["$route", "$location", "$log", "pagingConstan
 		
 		
 		//FILTERS
-		
 		this.indexOfFilter = function(toSearch) {
 			for (var i = 0; i < self.metadata.filters.length; i++) {
 			    var filter = self.metadata.filters[i]
@@ -170,7 +176,6 @@ services.factory("searchservice", ["$route", "$location", "$log", "pagingConstan
 		}
 		
 		this.decodeFilters = function(values) {
-			$log.info("decodeFilters ", values)
 			if (typeof values !== 'object') values = [values];
 			var filters = Stream(values)
 			.map(function(value){
@@ -178,18 +183,17 @@ services.factory("searchservice", ["$route", "$location", "$log", "pagingConstan
 				return {property:tokens[0],value:tokens[1]};
 				})
 			.toArray();
-			$log.info("filters", filters);
 			return filters;
 		}
-		
-		
-		
+
 	}
 	return new SearchService();
 	
 }]);
 
-
+/**
+ * Parsing service. Handle the query parsing, used for backend simulation.
+ */
 services.factory("parsingservice", ["$log", 
                                    function($log) {
 	
@@ -206,6 +210,9 @@ services.factory("parsingservice", ["$log",
 	
 }]);
 
+/**
+ * Bookmark service. Manages the bookmark instances. Static list for this prototype.
+ */
 services.factory("bookmarkservice", ["$log", 
                                     function($log) {
  	
@@ -213,8 +220,8 @@ services.factory("bookmarkservice", ["$log",
  		this.bookmarks = [
  		                  {
  		                	  id:"0",
- 		                	  label:"Devices online in Pisa",
- 		                	  query: "location:Pisa AND status:Online",
+ 		                	  label:"Devices offline in Denmark",
+ 		                	  query: "location:Denmark AND status:Offline",
  		                	  filters:[]
  		                  },
  		                  {
@@ -236,6 +243,9 @@ services.factory("bookmarkservice", ["$log",
  	
  }]);
 
+/**
+ * Filters generator. Generates the filters list based on current devices list. It is a backend simulation.
+ */
 services.factory("filtersgenerator", ["$q", "$log", "devicesresource", "searchservice", 
                                      function($q, $log, devicesresource, searchservice) {
   	
@@ -341,6 +351,9 @@ services.factory("filtersgenerator", ["$q", "$log", "devicesresource", "searchse
   	
   }]);
 
+/**
+ * Selection service. Handles the devices selection in list.
+ */
 services.factory("selectionservice", ["$log", 
                                      function($log) {
   	
@@ -402,12 +415,14 @@ services.factory("selectionservice", ["$log",
 			return self.allSelected;
 		};
 		
-		
   	}
   	return new SelectionService();
 	
   }]);
 
+/**
+ * Routing service. Offers helpers method for location management.
+ */
 services.factory("routingservice", ["$location", "$log",  
                                      function($location, $log) {
   	

@@ -1,8 +1,11 @@
 'use strict';
 
+/**
+ * Filters bar controller.
+ */
 angular.module("devicesUiApp")
-.controller("FiltersbarCtrl", ["$log", "searchservice",  
-           function ($log, searchservice) {
+.controller("FiltersbarCtrl", ["searchservice",  
+           function (searchservice) {
 	
 	this.metadata = searchservice.metadata;
 	this.removeFilter = searchservice.removeFilter;

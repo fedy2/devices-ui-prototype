@@ -1,23 +1,26 @@
 'use strict';
 
+/**
+ * Device list controller
+ */
 angular.module("devicesUiApp")
-.controller("DeviceListCtrl", ["$route", "$log", "routingservice", "selectionservice", "searchservice", "devicesBatch", 
-           function ($route, $log, routingservice, selectionservice, searchservice, devicesBatch) {
+.controller("DeviceListCtrl", ["routingservice", "selectionservice", "searchservice", "devicesBatch", 
+           function (routingservice, selectionservice, searchservice, devicesBatch) {
 	
 	this.devices = devicesBatch.devices;
+	this.search = searchservice;
 	searchservice.update(devicesBatch);
 	  
 	this.selection = selectionservice;
 	this.selection.resetPageSelected();
 	
-	this.toggleSelection = function() {
+	this.toggleListSelection = function() {
 		if (!selectionservice.isNone()) selectionservice.clear();
 		else selectionservice.selectPage(searchservice.currentDevices);
 	};
 	
-	this.search = searchservice;
-	
 	this.selectDevice = function(event, device) {
+		//we prevent click event propagation to the list element
 		event.stopPropagation();
 		selectionservice.toggle(device);
 	};
