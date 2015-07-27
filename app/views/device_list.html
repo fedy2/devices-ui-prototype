@@ -32,7 +32,7 @@
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
         <li><a href="#" ng-click="ctrl.addAttribute()">Add attribute</a></li>
-        <li><a href="#">Attributes bulk edit</a></li>
+        <li><a href="#" >Attributes bulk edit</a></li>
       </ul>
     </div>
   </div>
@@ -47,6 +47,20 @@
   <button class="btn btn-default" >
     <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
   </button>
+  
+  <!-- MORE -->
+  <div class="btn-group" ng-hide="ctrl.selection.isNone()">
+    <div class="dropdown">
+      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        More
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <li><a href="#">Check status</a></li>
+        <li><a href="#">Test connectivity</a></li>
+      </ul>
+    </div>
+  </div>
   
   <!-- PAGER -->
   <div class="btn-group pull-right" role="group">
