@@ -42,6 +42,7 @@ services.factory("devicesservice", ["devicesresource", "$q", "$log", "parsingser
 				deferred.resolve({
 					devices:devicesPage,
 					start:start,
+					len:len,
 					total:filteredDevices.length,
 					query: query,
 					filters: filters
@@ -85,6 +86,7 @@ services.factory("searchservice", ["$route", "$location", "$log", "pagingConstan
 		
 		this.update = function(deviceBatch) {
 			this.metadata.start = deviceBatch.start;
+			this.metadata.len = deviceBatch.len;
 			this.metadata.end = deviceBatch.start + deviceBatch.devices.length;
 			this.metadata.total = deviceBatch.total;
 			this.metadata.query = deviceBatch.query;
@@ -96,7 +98,7 @@ services.factory("searchservice", ["$route", "$location", "$log", "pagingConstan
 			this.controls.hasNextPage = this.metadata.end < this.metadata.total;
 			this.controls.hasPrevPage = this.metadata.start > 0;
 		};
-		
+
 		
 		//PAGE NAVIGATION
 		this.nextPage = function() {
@@ -146,7 +148,6 @@ services.factory("searchservice", ["$route", "$location", "$log", "pagingConstan
   		
   		
   		//SEARCH
-  		
 		this.search = function(query, filters) {
 			$log.info("search", query, filters);
 			$location.search(pagingConstants.startParam, 0);
@@ -160,6 +161,20 @@ services.factory("searchservice", ["$route", "$location", "$log", "pagingConstan
 			$location.search(pagingConstants.startParam, 0);
 			$location.search(pagingConstants.lenParam, pagingConstants.pageSize);
 			$location.search(pagingConstants.queryParam, query);
+			$location.search(pagingConstants.filtersParam, self.encodeFilters(self.metadata.filters));
+		};
+		
+		this.cleanParameters = function() {
+			$location.search(pagingConstants.startParam, null);
+			$location.search(pagingConstants.lenParam, null);
+			$location.search(pagingConstants.queryParam, null);
+			$location.search(pagingConstants.filtersParam, null);
+		};
+		
+		this.setParameters = function() {
+			$location.search(pagingConstants.startParam, self.metadata.start);
+			$location.search(pagingConstants.lenParam, self.metadata.len);
+			$location.search(pagingConstants.queryParam, self.metadata.query);
 			$location.search(pagingConstants.filtersParam, self.encodeFilters(self.metadata.filters));
 		};
 		
@@ -424,20 +439,23 @@ services.factory("selectionservice", ["$log",
 /**
  * Routing service. Offers helpers method for location management.
  */
-services.factory("routingservice", ["$location",  
-                                     function($location) {
+services.factory("routingservice", ["$location", "searchservice", 
+                                     function($location, searchservice) {
   	
   	function RoutingService() {
   		
   		this.goSingleDevice = function(device) {
+  			searchservice.cleanParameters();
   			$location.path('/projects/demo/devices/'+device.id);
   		};
   		
   		this.goEditSingleDevice = function(device) {
+  			searchservice.cleanParameters();
   			$location.path('/projects/demo/devices/'+device.id+'/edit');
   		};
   		
   		this.goDevicesList = function() {
+  			searchservice.setParameters();
   			$location.path('/projects/demo/devices');
   		};
   	}
