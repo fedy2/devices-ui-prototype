@@ -164,14 +164,7 @@ services.factory("searchservice", ["$route", "$location", "$log", "pagingConstan
 			$location.search(pagingConstants.filtersParam, self.encodeFilters(self.metadata.filters));
 		};
 		
-		this.cleanParameters = function() {
-			$location.search(pagingConstants.startParam, null);
-			$location.search(pagingConstants.lenParam, null);
-			$location.search(pagingConstants.queryParam, null);
-			$location.search(pagingConstants.filtersParam, null);
-		};
-		
-		this.setParameters = function() {
+		this.setSearchParameters = function() {
 			$location.search(pagingConstants.startParam, self.metadata.start);
 			$location.search(pagingConstants.lenParam, self.metadata.len);
 			$location.search(pagingConstants.queryParam, self.metadata.query);
@@ -180,6 +173,8 @@ services.factory("searchservice", ["$route", "$location", "$log", "pagingConstan
 		
 		this.applyFilters = function() {
 			$log.info("applyFilters");
+			$location.search(pagingConstants.startParam, 0);
+			$location.search(pagingConstants.lenParam, pagingConstants.pageSize);
 			$location.search(pagingConstants.filtersParam, self.encodeFilters(self.metadata.filters));
 		};
 		
@@ -445,17 +440,17 @@ services.factory("routingservice", ["$location", "searchservice",
   	function RoutingService() {
   		
   		this.goSingleDevice = function(device) {
-  			searchservice.cleanParameters();
+  			$location.search({});
   			$location.path('/projects/demo/devices/'+device.id);
   		};
   		
   		this.goEditSingleDevice = function(device) {
-  			searchservice.cleanParameters();
+  			$location.search({});
   			$location.path('/projects/demo/devices/'+device.id+'/edit');
   		};
   		
   		this.goDevicesList = function() {
-  			searchservice.setParameters();
+  			searchservice.setSearchParameters();
   			$location.path('/projects/demo/devices');
   		};
   	}
