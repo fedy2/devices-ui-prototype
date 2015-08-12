@@ -29,20 +29,24 @@
       <dd>{{ctrl.device.type}}</dd>
     <dt style="padding-top:5px">Properties</dt>
     <dd>
-    <table class="table table-hover table-condensed properties-table">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Value</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr ng-repeat="attribute in ctrl.device.attributes">
-          <td class="col-md-4">{{attribute.name}}</td>
-          <td class="col-md-4">{{attribute.value}}</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="row">
+      <div class="col-xs-12 col-lg-8">
+        <table class="table table-hover table-condensed properties-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="attribute in ctrl.device.attributes">
+              <td class="col-xs-6">{{attribute.name}}</td>
+              <td class="col-xs-6">{{attribute.value}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
     </dd>
       </dl>
   </div>

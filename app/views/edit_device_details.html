@@ -21,38 +21,42 @@
       <dd><input type="text" class="form-control editable-property" id="type" name="type" required ngMinlength="1" ng-model="ctrl.device.type"></dd>
     <dt style="padding-top:5px">Properties</dt>
     <dd>
-    <table class="table table-hover table-condensed properties-table">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Value</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr ng-repeat="attribute in ctrl.device.attributes">
-          <td class="col-md-6"><input type="text" class="form-control" required ngMinlength="1" ng-model="attribute.name"></td>
-          <td class="col-md-6"><input type="text" class="form-control" required ngMinlength="1" ng-model="attribute.value"></td>
-          <td class="col-md-1 action-cell">
-            <button class="btn btn-default btn-xs center-block">
-              <span class="glyphicon glyphicon-remove-circle" aria-hidden="true" ng-click="ctrl.removeAttribute(attribute)"></span>
-            </button>
-          </td>
-        </tr>
-        
-        <tr>
-            <td class="col-md-6">
-            </td>
-            <td class="col-md-6">
-            </td>
-            <td class="col-md-1 action-cell">
-              <button class="btn btn-default btn-xs" ng-click="ctrl.addNewAttribute()">
-                <span class="glyphicon glyphicon-plus" ></span>
-              </button>
-            </td>
-        </tr>
-      </tbody>
-    </table>
+      <div class="row">
+        <div class="col-xs-12 col-lg-8">
+          <table class="table table-hover table-condensed properties-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Value</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="attribute in ctrl.device.attributes">
+                <td class="col-md-6"><input type="text" class="form-control" required ngMinlength="1" ng-model="attribute.name"></td>
+                <td class="col-md-6"><input type="text" class="form-control" required ngMinlength="1" ng-model="attribute.value"></td>
+                <td class="col-md-1 action-cell">
+                  <button class="btn btn-default btn-xs center-block">
+                    <span class="glyphicon glyphicon-remove-circle" aria-hidden="true" ng-click="ctrl.removeAttribute(attribute)"></span>
+                  </button>
+                </td>
+              </tr>
+              
+              <tr>
+                  <td class="col-md-6">
+                  </td>
+                  <td class="col-md-6">
+                  </td>
+                  <td class="col-md-1 action-cell">
+                    <button class="btn btn-default btn-xs" ng-click="ctrl.addNewAttribute()">
+                      <span class="glyphicon glyphicon-plus" ></span>
+                    </button>
+                  </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </dd>
       </dl>
       </form>
