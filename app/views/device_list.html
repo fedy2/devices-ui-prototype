@@ -106,7 +106,7 @@
         ng-click="ctrl.selectDevice($event, device)" 
         ng-checked="ctrl.selection.isSelected(device)">
         
-        <span>{{device.name}}</span>
+        <span class="listitem-name">{{device.name}}</span>
         <span class="pull-right listitem-status" 
         ng-class="[
         {'device-status-online': device.status==='Online'},

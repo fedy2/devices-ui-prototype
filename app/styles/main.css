@@ -3,6 +3,13 @@
     padding-left:0;
 }
 
+.truncate {
+  /*width: 250px;*/
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 /* Move down content because we have a fixed navbar that is 50px tall */
 body {
   padding-top: 50px;
